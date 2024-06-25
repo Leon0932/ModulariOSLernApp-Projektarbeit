@@ -1080,7 +1080,7 @@
 			repositoryURL = "https://github.com/appstefan/highlightswift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.7;
+				minimumVersion = 1.0.9;
 			};
 		};
 		C37B7F432C08F72800B8602B /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
