@@ -53,10 +53,9 @@ Ensure the `Package.resolved` file is present in the `ModulariOSLernApp-Projekta
 
 If you encounter any issues or have questions, please open an issue on GitHub or contact the project developer.
 
-## Contributing
+## Video Demonstration
 
-Contributions are welcome! Please fork this repository and submit pull requests.
+Watch the demo demonstration of the app:
 
-## License
+[![Watch the video](https://img.youtube.com/vi/lWs0hCHoTvY/maxresdefault.jpg)](https://youtu.be/lWs0hCHoTvY?si=vaZl7TTzXuD8O7jD)
 
-This project is licensed under the MIT License. For more details, see the `LICENSE` file.
