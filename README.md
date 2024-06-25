@@ -1,6 +1,5 @@
 ### README.md
 
-```markdown
 # Modular iOS Learning App
 
 This project is a modular iOS learning application developed with Swift and Xcode.
