@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23E224" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CodeExerciseEntity" representedClassName="CodeExerciseEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="descrip" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="solutionCode" optional="YES" attributeType="String"/>
+        <attribute name="startingCode" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="codeExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubsectionEntity" inverseName="codeExercise" inverseEntity="SubsectionEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="ModuleEntity" representedClassName="ModuleEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="difficulty" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="moduleType" optional="YES" attributeType="String"/>
+        <attribute name="progress" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="totalSections" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="sections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SectionEntity" inverseName="module" inverseEntity="SectionEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="SectionEntity" representedClassName="SectionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="totalSubsections" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="module" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ModuleEntity" inverseName="sections" inverseEntity="ModuleEntity"/>
+        <relationship name="subsections" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SubsectionEntity" inverseName="section" inverseEntity="SubsectionEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="SubsectionEntity" representedClassName="SubsectionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="contentCode" optional="YES" attributeType="String"/>
+        <attribute name="contentDescription" optional="YES" attributeType="String"/>
+        <attribute name="contentTitle" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="codeExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CodeExerciseEntity" inverseName="codeExercise" inverseEntity="CodeExerciseEntity"/>
+        <relationship name="section" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SectionEntity" inverseName="subsections" inverseEntity="SectionEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+</model>

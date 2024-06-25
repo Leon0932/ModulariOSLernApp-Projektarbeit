@@ -1,0 +1,1710 @@
+[
+  {
+    "time" : 10,
+    "title" : "Introduction to Swift",
+    "sections" : [
+      {
+        "completedSubsections" : 0,
+        "title" : "Swift Basics",
+        "id" : 1,
+        "subsections" : [
+          {
+            "id" : 1,
+            "isCompleted" : false,
+            "contentDescription" : "A variable can be created using the keyword `var`. Constants can be created using `let`. To print the value out, use the function `print()`.\n\nUnlike other languages like C or C++, you don't need to specify the data type. The compiler recognizes the data types automatically. In the next module, you will learn about different data types.",
+            "codeExercise" : {
+              "description" : "Create a constant named `pi` and set it to the value 3.14159. Print the variable.",
+              "title" : "Create a constant",
+              "startingCode" : "...",
+              "solutionCode" : [
+                "let pi = 3.14159\nprint(pi)"
+              ],
+              "id" : 1
+            },
+            "contentCode" : "var variable1 = 0\nlet constant = 1\n\nprint(variable1)\nprint(constant)\n\nvariable1 = 5\nprint(variable1)\n\n\/\/ Compiler-Error\n\/\/ constant = 10",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/LanguageGuide\/TheBasics.html",
+            "title" : "Syntax"
+          },
+          {
+            "isCompleted" : false,
+            "contentCode" : "\/\/ This is a comment\n\n\/* This is also a comment\nbut is written over multiple lines. *\/",
+            "contentDescription" : "Use comments to include nonexecutable text in your code, as a note or reminder to yourself.\nComments are ignored by the Swift compiler when your code is compiled.\n\nComments in Swift are very similar to comments in C. Single-line comments begin with two forward-slashes (\/\/).\n\nMultiline comments start with a forward-slash followed by an asterisk (\/*) and end with an asterisk followed by a forward-slash (*\/):",
+            "title" : "Comments in Swift",
+            "id" : 2,
+            "codeExercise" : {
+              "id" : 2,
+              "description" : "Comment out the following line in Swift: `var x = 10`.",
+              "title" : "Learn comments",
+              "startingCode" : "var x = 10",
+              "solutionCode" : [
+                "\/\/ var x = 10"
+              ]
+            },
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/LanguageGuide\/TheBasics.html#ID315"
+          }
+        ]
+      }
+    ],
+    "progress" : 0,
+    "completedSections" : 0,
+    "moduleType" : "Swift",
+    "id" : 1,
+    "difficulty" : "Beginner"
+  },
+  {
+    "id" : 2,
+    "title" : "Basic concepts in Swift",
+    "moduleType" : "Swift",
+    "progress" : 0,
+    "sections" : [
+      {
+        "title" : "Variables and Constants",
+        "subsections" : [
+          {
+            "id" : 3,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/thebasics#Declaring-Constants-and-Variables",
+            "contentCode" : "let maximumNumberOfLoginAttempts = 10\nvar currentLoginAttempt = 0\n\nprint(\"The maximum number of login attempts is \\(maximumNumberOfLoginAttempts)\")\nprint(\"The current number of login attempts is \\(currentLoginAttempt)\")",
+            "isCompleted" : false,
+            "title" : "Introduction",
+            "contentDescription" : "Constants and variables must be declared before they’re used.\nYou declare constants with the `let` keyword and variables with the `var` keyword.\n\nHere’s an example of how constants and variables can be used to track the number of login attempts a user has made. The result will get with `print` printed out. Use String Interpolation ( `\\()` ) to print out the variable in a `String`"
+          },
+          {
+            "isCompleted" : false,
+            "codeExercise" : {
+              "description" : "1) Declare a variable `name` of type `String` and assign it the value \"John\"\n2) Create a constant `age` of `Int` and set it to 18.\n3) Use String Interpolation to print the following text:\n\"Hello, my name is John and I am 18 years old\"",
+              "solutionCode" : [
+                "var name: String = \"John\"\nlet age: Int = 18\nprint(\"Hello, my name is \\(name) and I am \\(age) years old\")"
+              ],
+              "title" : "Declare a variable",
+              "id" : 3,
+              "startingCode" : "..."
+            },
+            "contentCode" : "var welcomeMessage: String\n\n\/\/ The welcomeMessage variable can now be set to any string value without error:\nwelcomeMessage = \"Hello\"\nprint(welcomeMessage)",
+            "title" : "Type Annotations",
+            "id" : 4,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/thebasics\/#Type-Annotations",
+            "contentDescription" : "You can provide a `type annotation` when you declare a constant or variable, to be clear about the kind of values the constant or variable can store.\nWrite a type annotation by placing a colon after the constant or variable name, followed by a space, followed by the name of the type to use.\n\nThis example provides a type annotation for a variable called `welcomeMessage`, to indicate that the variable can store String values:"
+          }
+        ],
+        "id" : 1,
+        "completedSubsections" : 0
+      },
+      {
+        "id" : 2,
+        "title" : "Datatypes",
+        "completedSubsections" : 0,
+        "subsections" : [
+          {
+            "title" : "Integers and Floating-Points",
+            "contentDescription" : "*Integers* are whole numbers with no fractional component, such as 42 and -23. Integers are either signed (positive, zero, or negative) or unsigned (positive or zero).\n\n*Floating-point* numbers are numbers with a fractional component, such as 3.14159, 0.1, and -273.15. Floating-point types can represent a much wider range of values than integer types, and can store numbers that are much larger or smaller than can be stored in an Int. Swift provides two signed floating-point number types:\n\n• Double represents a 64-bit floating-point number.\n• Float represents a 32-bit floating-point number.\n\nDouble has a precision of at least 15 decimal digits, whereas the precision of `Float` can be as little as 6 decimal digits. The appropriate\nfloating-point type to use depends on the nature and range of values you need to work with in your code.\n\nIn situations where either type would be appropriate, `Double` is preferred.",
+            "id" : 5,
+            "isCompleted" : false,
+            "contentCode" : "let age = 12 \/\/ int\nlet note = 1.7 \/\/ double\nprint(age)\nprint(note)",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/thebasics#Int"
+          },
+          {
+            "id" : 6,
+            "isCompleted" : false,
+            "title" : "Strings and Characters",
+            "contentDescription" : "A *string* is a series of characters, such as \"hello, world\" or \"albatross\". Swift strings are represented by the `String` type. The contents of a `String` can be accessed in various ways, including as a collection of `Character` values.\n\nYou can include predefined `String` values within your code as string literals. A string literal is a sequence of characters surrounded by double quotation marks (\"\").\n\nUse a string literal as an initial value for a constant or variable:",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/stringsandcharacters#String-Literals",
+            "contentCode" : "let someString = \"Some string literal value\"\nprint(someString)"
+          },
+          {
+            "title" : "Booleans",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/thebasics#Booleans",
+            "contentDescription" : "Swift has a basic Boolean type, called `Bool`. Boolean values are referred to as logical, because they can only ever be `true` or `false`.",
+            "id" : 7,
+            "contentCode" : "let orangesAreOrange = true\nlet turnipsAreDelicious = false\nprint(orangesAreOrange)\nprint(turnipsAreDelicious)"
+          }
+        ]
+      },
+      {
+        "subsections" : [
+          {
+            "contentCode" : "\/\/ Unary Operators: -a\n\/\/ Binary Operators: 2 + 3\n\/\/ Ternary Operators: a ? b : c",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/basicoperators#Terminology",
+            "isCompleted" : false,
+            "id" : 8,
+            "contentDescription" : "Operators are unary, binary, or ternary:\n\n• Unary operators operate on a single target (such as `-a`). Unary prefix operators appear immediately before their target (such as `!b`), and unary postfix operators appear immediately after their target (such as `c!`).\n\n• Binary operators operate on two targets (such as `2 + 3`) and are infix because they appear in between their two targets.\n\n• Ternary operators operate on three targets. Like C, Swift has only one ternary operator, the ternary conditional operator (`a ? b : c`).\n\nThe values that operators affect are operands. In the expression `1 + 2`, the + symbol is an infix operator and its two operands are the values 1 and 2.",
+            "title" : "Basics"
+          },
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/basicoperators#Assignment-Operator",
+            "contentCode" : "let b = 10\nvar a = 5\na = b\nprint(a)",
+            "title" : "Assignment",
+            "contentDescription" : "The assignment operator (`a = b`) initializes or updates the value of a with the value of b:",
+            "id" : 9,
+            "isCompleted" : false
+          },
+          {
+            "isCompleted" : false,
+            "contentDescription" : "Swift supports the four standard arithmetic operators for all number types:\n\n• Addition (`+`) (also supported for `String` concatenation)\n• Subtraction (`-`)\n• Multiplication (`*`)\n• Division (`\/`)",
+            "id" : 10,
+            "contentCode" : "let a = 1 + 2\nprint(a)\n\nlet b = 5 - 3\nprint(b)\n\nlet c = 2 * 3\nprint(c)\n\nlet d = 10.0 \/ 2.5\nprint(d)\n\nlet e = \"hello\"\nlet f = \"world\"\nprint(e + f)",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/basicoperators#Arithmetic-Operators",
+            "title" : "Arithmetic"
+          },
+          {
+            "title" : "Remainder",
+            "codeExercise" : {
+              "title" : "Learn Operators",
+              "solutionCode" : [
+                "let a: Int = 10\nlet b: Int = 18\nlet sum: Int = a + b\nlet moduleOperation: Int = sum % 10\nprint(moduleOperation)"
+              ],
+              "startingCode" : "...",
+              "description" : "1) Create two constants `a` and `b` of type `Int` with the values 10 and 18.\n2) Add these two variables and store the result in a new constant `sum` of type `Int`.\n3) Then create a new constant of type `Int` with the name `moduleOperation` and perform *sum module 10*. Print the result.",
+              "id" : 4
+            },
+            "contentDescription" : "The remainder operator (`a % b`) works out how many multiples of `b` will fit inside a and returns the value that’s left over (known as the remainder).\n\nThe remainder operator (`%`) is also known as a modulo operator in other languages. However, its behavior in Swift for negative numbers means that, strictly speaking, it’s a remainder rather than a modulo operation.",
+            "contentCode" : "let a = 9 % 4\nprint(a)\n\nlet b = -9 % 4\nprint(b)",
+            "id" : 11,
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/basicoperators#Remainder-Operator"
+          },
+          {
+            "id" : 12,
+            "title" : "Unary Minus \/ Plus",
+            "contentDescription" : "The sign of a numeric value can be toggled using a prefixed `-`, known as the unary minus operator.\n\n• The unary minus operator (`-`) is prepended directly before the value it operates on, without any white space.\n• The unary plus operator (`+`) simply returns the value it operates on, without any change:",
+            "contentCode" : "let three = 3\nlet minusThree = -three\nprint(minusThree)\n\nlet plusThree = -minusThree\nprint(plusThree)\n\nlet minusSix = -6\nlet alsoMinusSix = +minusSix\nprint(alsoMinusSix)",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/basicoperators#Unary-Minus-Operator"
+          },
+          {
+            "contentDescription" : "Swift supports the following comparison operators:\n\n• Equal to (`a == b`)\n• Not equal to (`a != b`)\n• Greater than (`a > b`)\n• Less than (`a < b`)\n• Greater than or equal to (`a >= b`)\n• Less than or equal to (`a <= b`)",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/basicoperators#Comparison-Operators",
+            "id" : 13,
+            "title" : "Comparison",
+            "contentCode" : "print(1 == 1)\nprint(2 != 1)\nprint(2 > 1)\nprint(1 < 2)\nprint(1 >= 1)\nprint(2 <= 1)\n"
+          },
+          {
+            "id" : 14,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/basicoperators#Ternary-Conditional-Operator",
+            "contentCode" : "let question = true\nvar answer1: String = \"Question is true\"\nvar answer2: String = \"Question is false\"\n\nif question {\n    print(answer1)\n} else {\n    print(answer2)\n}\n\n\/\/ is equal to:\nprint(question ? answer1 : answer2)",
+            "title" : "Ternary Conditionals",
+            "isCompleted" : false,
+            "contentDescription" : "The ternary conditional operator is a special operator with three parts, which takes the form `question ? answer1 : answer2`.\n\nIt’s a shortcut for evaluating one of two expressions based on whether `question` is `true` or `false`. If `question` is `true`, it evaluates `answer1` and returns its value; otherwise, it evaluates `answer2` and returns its value.\n\nThe ternary conditional operator is shorthand for the code below:"
+          }
+        ],
+        "id" : 3,
+        "title" : "Operators",
+        "completedSubsections" : 0
+      },
+      {
+        "title" : "Enumerations",
+        "subsections" : [
+          {
+            "contentDescription" : "*Enumerations* (or `enums`) in Swift are a powerful feature that allows you to define a common type for a group of related values and work with those values in a type-safe way. Swift enumerations are more flexible than their counterparts in many other languages. They can have associated values and methods",
+            "contentCode" : "",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/enumerations",
+            "isCompleted" : false,
+            "id" : 15,
+            "title" : "Introduction"
+          },
+          {
+            "id" : 16,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/enumerations#Enumeration-Syntax",
+            "title" : "Syntax",
+            "isCompleted" : false,
+            "contentCode" : "enum CompassPoint {\n    case north\n    case south\n    case east\n    case west\n}\n\n\/\/ or\nenum CompassPointVariant2 {\n    case north, south, east, west\n}",
+            "contentDescription" : "You introduce enumerations with the `enum` keyword and place their entire definition within a pair of braces:\n\nHere’s an example for the four main points of a compass:"
+          },
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/enumerations#Enumeration-Syntax",
+            "contentDescription" : "Each enumeration definition defines a new type. Like other types in Swift, their names (such as `CompassPoint`) start with a capital letter. Give enumeration types singular rather than plural names, so that they read as self-evident:\n\nHere’s an example:",
+            "contentCode" : "enum CompassPoint {\n    case north, south, east, west\n}\n\nvar directionToHead = CompassPoint.west\n\/\/ Use shorter dot syntax after it's initialized\ndirectionToHead = .east\nprint(directionToHead)",
+            "title" : "Using Enumeration Cases",
+            "isCompleted" : false,
+            "id" : 17
+          }
+        ],
+        "completedSubsections" : 0,
+        "id" : 4
+      }
+    ],
+    "time" : 45,
+    "completedSections" : 0,
+    "difficulty" : "Beginner"
+  },
+  {
+    "moduleType" : "Swift",
+    "sections" : [
+      {
+        "title" : "Conditionals",
+        "id" : 1,
+        "completedSubsections" : 0,
+        "subsections" : [
+          {
+            "id" : 18,
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/controlflow",
+            "title" : "Introduction",
+            "contentDescription" : "It’s often useful to execute different pieces of code based on certain conditions. You might want to run an extra piece of code when an error occurs, or to display a message when a value becomes too high or too low. To do this, you make parts of your code conditional.\n\nSwift provides two ways to add conditional branches to your code: the `if` statement and the `switch` statement. Typically, you use the if statement to evaluate simple conditions with only a few possible outcomes. The switch statement is better suited to more complex conditions with multiple possible permutations and is useful in situations where pattern matching can help select an appropriate code branch to execute.",
+            "contentCode" : "if <statement> {\n    \/\/ do something\n}\n\nswitch <some value> {\n    case <Nr. 1>:\n        \/\/ do something\n    case <Nr. 2>:\n        \/\/ do something\n    default:\n        \/\/ do something"
+          },
+          {
+            "id" : 19,
+            "contentCode" : "let temperatureInFahrenheit = 90\n\nif temperatureInFahrenheit <= 32 {\n    print(\"It's very cold. Consider wearing a scarf.\")\n} else if temperatureInFahrenheit >= 86 {\n    print(\"It's really warm. Don't forget to wear sunscreen.\")\n} else {\n    print(\"It's not that cold. Wear a T-shirt.\")\n}",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/controlflow#If",
+            "contentDescription" : "In Swift, you can control the execution of code based on specific conditions using `if` and `else` statements. These statements allow you to specify a condition for Swift to evaluate and a block of code to execute if the condition is true.\n\nAdditionally, you can include an else clause to provide an alternative block of code that runs if the condition is false. For more complex scenarios, you can use else if to add more conditions to be checked. A \"block\" of code in Swift is simply a section of code enclosed by curly braces – { } – to define its start and end.\n\nYou can also use `else if` to provide a more detailed statement.",
+            "codeExercise" : {
+              "title" : "Learn if-else",
+              "solutionCode" : [
+                "let number = 12\nif number > 10 {\n    print(\"Greater than 10\")\n} else {\n    print(\"Less than or equal to 10\")\n}"
+              ],
+              "id" : 5,
+              "startingCode" : "let number = 12",
+              "description" : "Write an if-else condition that checks if a number `number` is greater than 10 and prints \"Greater than 10\" or \"Less than or equal to 10\" accordingly."
+            },
+            "title" : "If-Else",
+            "isCompleted" : false
+          },
+          {
+            "codeExercise" : {
+              "description" : "Write a switch statement that checks the value of a variable `grade` and prints \"Excellent\" for A, \"Good\" for B, \"Fair\" for C, \"Poor\" for D, \"Fail\" for F and for default \"Invalid grade\".",
+              "title" : "Learn switch",
+              "solutionCode" : [
+                "let grade = \"B\"\nswitch grade {\ncase \"A\":\n    print(\"Excellent\")\ncase \"B\":\n    print(\"Good\")\ncase \"C\":\n    print(\"Fair\")\ncase \"D\":\n    print(\"Poor\")\ncase \"F\":\n    print(\"Fail\")\ndefault:\n    print(\"Invalid grade\")\n}"
+              ],
+              "id" : 6,
+              "startingCode" : "let grade = \"B\""
+            },
+            "contentDescription" : "A `switch` statement considers a value and compares it against several possible matching patterns. It then executes an appropriate block of code, based on the first pattern that matches successfully.\n\nA `switch` statement provides an alternative to the `if` statement for responding to multiple potential states.\n\nIn its simplest form, a `switch` statement compares a value against one or more values of the same type.",
+            "title" : "Switch",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/controlflow#Switch",
+            "id" : 20,
+            "contentCode" : "let someCharacter: Character = \"z\"\nswitch someCharacter {\ncase \"a\":\n    print(\"The first letter of the Latin alphabet\")\ncase \"z\":\n    print(\"The last letter of the Latin alphabet\")\ndefault:\n    print(\"Some other character\")\n}"
+          }
+        ]
+      },
+      {
+        "subsections" : [
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/controlflow#For-In-Loops",
+            "id" : 21,
+            "title" : "For-in",
+            "contentDescription" : "You use the `for-in` loop to iterate over a sequence, such as items in an array, ranges of numbers, or characters in a string.\n\nHere are some examples:",
+            "codeExercise" : {
+              "id" : 7,
+              "solutionCode" : [
+                "let numbers = [1, 2, 3, 4, 5]\nfor number in numbers {\n    print(number)\n}"
+              ],
+              "title" : "Learn for-loops",
+              "description" : "Write a for-in loop that iterates over an array of `numbers` and prints each number.",
+              "startingCode" : "let numbers = [1, 2, 3, 4, 5]"
+            },
+            "isCompleted" : false,
+            "contentCode" : "\/\/ Iterate over the items in an array\nlet names = [\"Anna\", \"Alex\", \"Brian\", \"Jack\"]\nfor name in names {\n    print(\"Hello, \\(name)!\")\n}\n\n\/\/ Iterate over a range of numbers from 1 to 5\nfor index in 1...5 {\n    print(\"\\(index)! times 5 is \\(index * 5)!\")\n}\n\n\/\/ the half-open range operator (..<) includes the\n\/\/ lower bound but not the upper bound.\n\/\/ 1..<6 is equal to 1...5\n\n\n\/\/ If you don’t need each value from a sequence,\n\/\/ you can ignore the values by using an underscore\n\/\/ in place of a variable name.\nfor _ in 1...5 {\n    print(\"Loops are cool\")\n}\n"
+          },
+          {
+            "codeExercise" : {
+              "description" : "Write a while loop that counts down from 5 to 1 and prints each number (use the `-=` operator)",
+              "solutionCode" : [
+                "var counter = 5\nwhile counter > 0 {\n    print(counter)\n    counter -= 1\n}"
+              ],
+              "startingCode" : "var counter = 5",
+              "id" : 8,
+              "title" : "Learn while-loops"
+            },
+            "isCompleted" : false,
+            "id" : 22,
+            "title" : "While",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/controlflow#While",
+            "contentDescription" : "A `while` loop starts by evaluating a single condition. If the condition is `true`, a set of statements is repeated until the condition becomes `false`.\n\nIn this example, the `while` loop runs as long as `count` is greater than 0. During each iteration, the value of `count` is decreased by 1 and printed. When count reaches 0, the loop stops, and \"Start!\" is printed:",
+            "contentCode" : "var count = 5\n\nwhile count > 0 {\n    print(\"Countdown: \\(count)!\")\n    count -= 1\n}\n\nprint(\"Start!\")"
+          },
+          {
+            "title" : "Repeat-While",
+            "isCompleted" : false,
+            "contentDescription" : "The other variation of the `while` loop, known as the `repeat-while` loop, performs a single pass through the loop block first, before considering the loop’s condition. It then continues to repeat the loop until the condition is `false`.\n\nIn this example, the `repeat-while` loop is executed at least once. During each iteration, the value of `count` is decreased by 1 and printed. The loop repeats as long as `count` is greater than 0:",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/controlflow#Repeat-While",
+            "id" : 23,
+            "codeExercise" : {
+              "description" : "Write a `repeat-while` loop that counts up from 1 to 5 and prints each number (use the `+=` operator)",
+              "startingCode" : "var count = 1",
+              "id" : 9,
+              "title" : "Learn repeat-while-loops",
+              "solutionCode" : [
+                "var count = 1\nrepeat {\n    print(count)\n    count += 1\n} while count <= 5"
+              ]
+            },
+            "contentCode" : "var count = 3\n\nrepeat {\n    print(\"Repeating: \\(count)!\")\n    count -= 1\n} while count > 0\n\nprint(\"Done!\")"
+          }
+        ],
+        "id" : 2,
+        "title" : "Loops",
+        "completedSubsections" : 0
+      },
+      {
+        "title" : "Control Transfers",
+        "subsections" : [
+          {
+            "contentDescription" : "*Control transfer statements* change the order in which your code is executed, by transferring control from one piece of code to another. Swift has five control transfer statements:\n\n• `continue`\n• `break`\n• `fallthrough`\n• `return`\n• `throw`\n\nThe `continue`, `break`, and `fallthrough` statements are described below. The `return` statement is described in **Module: Functions**, and the `throw` statement is described in **Module:  Error Handling**.\n",
+            "isCompleted" : false,
+            "title" : "Introduction",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/controlflow#Control-Transfer-Statements",
+            "contentCode" : "",
+            "id" : 24
+          },
+          {
+            "title" : "Continue",
+            "contentDescription" : "The `continue` statement tells a loop to stop what it’s doing and start again at the beginning of the next iteration through the loop. It says “I am done with the current loop iteration” without leaving the loop altogether.\n\nIn this example:\n• The loop iterates through numbers from `1 to 10`.\n• If `number is even` (i.e., `number % 2 == 0`), the `continue` statement is executed, causing the rest of the current iteration to be skipped.\n• As a result, only odd numbers are printed: 1, 3, 5, 7, 9.",
+            "contentCode" : "for number in 1...10 {\n    if number % 2 == 0 {\n        continue\n    }\n    print(number)\n}",
+            "id" : 25,
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/controlflow#Continue",
+            "codeExercise" : {
+              "solutionCode" : [
+                "for number in 1...10 {\n    if number % 2 == 0 {\n        print(number)\n    }\n    continue\n}"
+              ],
+              "id" : 10,
+              "description" : "Write a for-in loop that iterates over the numbers from 1 to 10 and only prints the even numbers.",
+              "title" : "Learn continue",
+              "startingCode" : "for number in 1...10 {\n    ...\n}"
+            }
+          },
+          {
+            "contentDescription" : "The `break` statement ends execution of an entire control flow statement immediately. The break statement can be used inside a `switch` or `loop` statement when you want to terminate the execution of the `switch` or loop statement earlier than would otherwise be the case.\n\n\nIn this example:\n• The loop iterates through numbers from 1 to 10.\n• When `number` equals 5, the `break` statement is executed, which immediately exits the loop.\n• As a result, the loop stops, and only the numbers 1, 2, 3, and 4 are printed.",
+            "title" : "Break",
+            "id" : 26,
+            "codeExercise" : {
+              "solutionCode" : [
+                "for i in 1...10 {\n    if i % 2 == 0 {\n        break\n    }\n    print(i)\n}"
+              ],
+              "description" : "Write a for-in loop that iterates over the numbers from 1 to 10 and breaks the loop when it reaches a even number.",
+              "id" : 11,
+              "title" : "Learn break",
+              "startingCode" : "for i in 1...10 {\n    ...\n}"
+            },
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/controlflow#Break",
+            "isCompleted" : false,
+            "contentCode" : "for number in 1...10 {\n    if number == 5 {\n        break\n    }\n    print(number)\n}"
+          },
+          {
+            "title" : "Fallthrough",
+            "contentCode" : "let number = 3\n\nswitch number {\ncase 1:\n    print(\"The number is 1\")\ncase 2:\n    print(\"The number is 2\")\ncase 3:\n    print(\"The number is 3\")\n    fallthrough \/\/ Continue to the next case\ncase 4:\n    print(\"The number is 4\")\n    fallthrough \/\/ Continue to the next case\ncase 5:\n    print(\"The number is 5\")\ndefault:\n    print(\"The number is something else\")\n}",
+            "contentDescription" : "In Swift, `switch` statements don’t fall through the bottom of each case and into the next one. That is, the entire `switch` statement completes its execution as soon as the first matching case is completed. By contrast, C requires you to insert an explicit `break` statement at the end of every `switch` case to prevent fallthrough. Avoiding default fallthrough means that Swift `switch` statements are much more concise and predictable than their counterparts in C, and thus they avoid executing multiple `switch` cases by mistake.\n\nIn this example:\n• The `number` variable is set to 3.\n• The `switch` statement evaluates the value of `number`.\n• When the case `3` is matched, \"The number is 3\" is printed.\n• The `fallthrough` statement is used, so the execution continues to the next case (`4`), even though number is not 4.\n• \"The number is 4\" is printed, and another `fallthrough` statement causes execution to continue to the next case (`5`).\n• \"The number is 5\" is printed, but this time there is no `fallthrough`, so the `switch` statement terminates.",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/controlflow#Fallthrough",
+            "isCompleted" : false,
+            "codeExercise" : {
+              "description" : "Write a switch statement with a case `1` that falls through to the code in case `2`.",
+              "id" : 12,
+              "title" : "Learn fallthrough",
+              "startingCode" : "let value = 1",
+              "solutionCode" : [
+                "let value = 1\nswitch value {\ncase 1:\n    print(\"Case 1\")\n    fallthrough\ncase 2:\n    print(\"Case 2\")\ndefault:\n    print(\"Other case\")\n}"
+              ]
+            },
+            "id" : 27
+          }
+        ],
+        "id" : 3,
+        "completedSubsections" : 0
+      }
+    ],
+    "difficulty" : "Beginner",
+    "id" : 3,
+    "completedSections" : 0,
+    "time" : 60,
+    "title" : "Control Flows",
+    "progress" : 0
+  },
+  {
+    "sections" : [
+      {
+        "title" : "Introduction",
+        "completedSubsections" : 0,
+        "id" : 1,
+        "subsections" : [
+          {
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#Defining-and-Calling-Functions",
+            "contentDescription" : "When defining a *function*, you can optionally define named, typed input values called `parameters`, and a type for the output value, known as the `return` type. Every function has a name describing its task. To use a function, you \"call\" it with its name and provide input values, or arguments, matching the function’s parameters in the specified order.\n\n\nTo demonstrate this, there are two functions:\n\n• The function `greet(person:)`, takes a person’s name as input and returns a greeting. It defines one input parameter—a String called person—and a return type of String for the greeting.\n• The function `helloWorld()` takes no parameters and returns nothing; it only prints \"Hello World\".",
+            "codeExercise" : {
+              "id" : 13,
+              "description" : "Write a function `square` that takes a Int parameter `number` and prints the result.",
+              "title" : "Learn functions",
+              "startingCode" : "square(number: 10)",
+              "solutionCode" : [
+                "func square(number: Int) {\n    print(number * number)\n}\nsquare(number: 10)"
+              ]
+            },
+            "contentCode" : "func greet(person: String) -> String {\n    let greeting = \"Hello, \" + person + \"!\"\n    return greeting\n}\n\nfunc helloWorld() {\n    print(\"Hello World\")\n}\n\nprint(greet(person: \"Anna\"))\nprint(greet(person: \"Brian\"))\n\nhelloWorld()",
+            "id" : 28,
+            "title" : "Defining and Calling"
+          }
+        ]
+      },
+      {
+        "completedSubsections" : 0,
+        "title" : "Specify Argument\/Parameters",
+        "subsections" : [
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#Function-Argument-Labels-and-Parameter-Names",
+            "title" : "Specifying Argument Labels",
+            "isCompleted" : false,
+            "id" : 29,
+            "codeExercise" : {
+              "description" : "Write a function `multiply` that takes two parameters `a` and `b` and returns their product. Use argument labels `number1` and `number2`.",
+              "id" : 14,
+              "startingCode" : "let result = multiply(number1: 5, number2: 5)\nprint(result)",
+              "title" : "Learn Argument Labels I",
+              "solutionCode" : [
+                "func multiply(number1 a: Int, number2 b: Int) -> Int {\n    return a * b\n}\nlet result = multiply(number1: 5, number2: 5)\nprint(result)"
+              ]
+            },
+            "contentCode" : "func greet(person: String, from hometown: String) -> String {\n    return \"Hello \\(person)!  Glad you could visit from \\(hometown).\"\n}\n\nprint(greet(person: \"Bill\", from: \"Cupertino\"))",
+            "contentDescription" : "Each function parameter has both an *argument label* and a *parameter name*. The argument label is used when calling the function; each argument is written in the function call with its argument label before it. The parameter name is used in the implementation of the function. By default, parameters use their parameter name as their argument label.\n\nYou can specify an argument label before the parameter name, separated by a space.\nHere’s a variation of the `greet(person:)` function that takes a person’s name and hometown and returns a greeting:"
+          },
+          {
+            "codeExercise" : {
+              "id" : 15,
+              "title" : "Learn Argument Labels II",
+              "startingCode" : "let result = subtract(20, 5)\nprint(result)",
+              "description" : "Write a function `subtract` that takes two parameters (`a` and `b`) without argument labels and returns the difference.",
+              "solutionCode" : [
+                "func subtract(_ a: Int, _ b: Int) -> Int {\n    return a - b\n}\nlet result = subtract(20, 5)\nprint(result)"
+              ]
+            },
+            "contentDescription" : "If you don’t want an argument label for a parameter, write an underscore (_) instead of an explicit argument label for that parameter.",
+            "id" : 30,
+            "title" : "Omitting Argument Labels",
+            "contentCode" : "func greet(_ person: String, from hometown: String) -> String {\n    return \"Hello \\(person)!  Glad you could visit from \\(hometown).\"\n}\nprint(greet(\"Bill\", from: \"Cupertino\"))",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#Omitting-Argument-Labels",
+            "isCompleted" : false
+          },
+          {
+            "id" : 31,
+            "contentCode" : "func greet(_ person: String, from hometown: String = \"Cupertino\") -> String {\n    return \"Hello \\(person)!  Glad you could visit from \\(hometown).\"\n}\nprint(greet(\"Bill\"))",
+            "contentDescription" : "You can define a *default value* for any parameter in a function by assigning a value to the parameter after that parameter’s type. If a default value is defined, you can omit that parameter when calling the function.",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#Default-Parameter-Values",
+            "title" : "Default Parameter Values",
+            "codeExercise" : {
+              "title" : "Learn default Parameter Values",
+              "startingCode" : "let result = increment(5)\nprint(result)",
+              "solutionCode" : [
+                "func increment(_ number: Int, incrementValue: Int = 1) -> Int {\n    return number + incrementValue\n}\nlet result = increment(5)\nprint(result)"
+              ],
+              "description" : "Write a function `increment` that has a parameter `number` and an optional parameter `by` (use argument label `incrementValue`), which defaults to 1. The function should increment `number` by the value of `by` and return the result.",
+              "id" : 16
+            },
+            "isCompleted" : false
+          },
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#Variadic-Parameters",
+            "contentDescription" : "A *variadic parameter* accepts zero or more values of a specified type. You use a variadic parameter to specify that the parameter can be passed a varying number of input values when the function is called. Write variadic parameters by inserting three period characters (...) after the parameter’s type name.\n\nThe values passed to a variadic parameter are made available within the function’s body as an array of the appropriate type. For example, a variadic parameter with a name of numbers and a type of `Double...` is made available within the function’s body as a constant array called numbers of type `[Double]`.\n\nThe example below calculates the arithmetic mean (also known as the average) for a list of numbers of any length:",
+            "id" : 32,
+            "isCompleted" : false,
+            "contentCode" : "func arithmeticMean(_ numbers: Double...) -> Double {\n    var total: Double = 0\n    for number in numbers {\n        total += number\n    }\n    return total \/ Double(numbers.count)\n}\n\nprint(arithmeticMean(1, 2, 3, 4, 5))",
+            "codeExercise" : {
+              "description" : "Write a function `sum` that accepts a variable `number` of `Int` values and returns their `sum`.",
+              "title" : "Learn variadic Parameters",
+              "solutionCode" : [
+                "func sum(_ numbers: Int...) -> Int {\n    return numbers.reduce(0, +)\n}\n\nlet result = sum(1, 2, 3, 4, 5)\nprint(result)"
+              ],
+              "id" : 17,
+              "startingCode" : "let result = sum(1, 2, 3, 4, 5)\nprint(result)"
+            },
+            "title" : "Variadic Parameters"
+          },
+          {
+            "contentDescription" : "Function parameters are constants by default. Trying to change a function parameter's value within the function body results in a compile-time error, preventing accidental changes. If you want a function to modify a parameter's value and have those changes persist after the function call, define that parameter as an in-out parameter instead.\n\nYou write an in-out parameter by placing the `inout` keyword before a parameter’s type. An in-out parameter's value is passed into the function, modified by the function, and passed back out to replace the original value. For more on in-out parameters and compiler optimizations, see In-Out Parameters.\n\nYou can only pass a variable as the argument for an in-out parameter, not a constant or literal value, as they can’t be modified. Place an ampersand (`&`) before a variable’s name when passing it as an argument to indicate it can be modified by the function.\n\nNote: In-out parameters can’t have default values, and variadic parameters can’t be marked as `inout`.\n\nHere’s an example of a function called `swapTwoInts(_:_:)`, which has two in-out integer parameters called `a` and `b`:",
+            "codeExercise" : {
+              "id" : 17,
+              "description" : "Rewrite the function `increment` to accept a new parameter `result`, which saves the result in this variable (`result` should be the last parameter). The function should return nothing.",
+              "startingCode" : "func increment(_ number: Int, by incrementValue: Int = 1) -> Int {\n    return number + incrementValue\n}\n\nvar result = 0\nincrement(5, &result)\nprint(result)",
+              "solutionCode" : [
+                "func increment(_ number: Int, incrementValue: Int = 1, result: inout Int) {\n    result = number + incrementValue\n}\n\nvar result = 0\nincrement(5, result: &result)\nprint(result)"
+              ],
+              "title" : "Learn In-Out Parameters"
+            },
+            "title" : "In-Out Parameters",
+            "contentCode" : "func swapTwoInts(_ a: inout Int, _ b: inout Int) {\n    let temporaryA = a\n    a = b\n    b = temporaryA\n}\n\nvar someInt = 3\nvar anotherInt = 107\nswapTwoInts(&someInt, &anotherInt)\nprint(\"someInt is now \\(someInt), and anotherInt is now \\(anotherInt)\")",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#In-Out-Parameters",
+            "isCompleted" : false,
+            "id" : 33
+          }
+        ],
+        "id" : 2
+      },
+      {
+        "title" : "Function Types",
+        "completedSubsections" : 0,
+        "subsections" : [
+          {
+            "contentCode" : "",
+            "id" : 34,
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#Function-Types",
+            "title" : "Introduction",
+            "contentDescription" : "Every function has a specific *function type*, made up of the parameter types and the return type of the function.\n\n\nFor example:\n`func addTwoInts(_ a: Int,\n                 _ b: Int) -> Int\n{ return a + b }`\n\n`func multiplyTwoInts(_ a: Int,\n                      _ b: Int) -> Int\n{ return a * b }`\n\nThis example defines two simple mathematical functions called `addTwoInts` and `multiplyTwoInts`. These functions each take two `Int` values, and return an `Int` value, which is the result of performing an appropriate mathematical operation.\n\nThe type of both of these functions is:\n`(Int, Int) -> Int`.\n\nThis can be read as:\n“A function that has two parameters, both of type Int, and that returns a value of type Int.”\n\nHere’s another example, for a function with no parameters or return value:\n\n`func printHelloWorld() { print(\"hello, world\") }`\n\nThe type of this function is `() -> Void`,\nor “a function that has no parameters, and returns Void.”"
+          },
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#Using-Function-Types",
+            "id" : 35,
+            "title" : "Using Function Types",
+            "isCompleted" : false,
+            "contentDescription" : "You use function types just like any other types in Swift. For example, you can define a constant or variable to be of a function type and assign an appropriate function to that variable.\n\nThis example below, can be read as:\n“Define a variable called mathFunction, which has a type of ‘a function that takes two `Int` values, and returns an `Int` value. Set this new variable to refer to the function called `addTwoInts`.”\n\nThe `addTwoInts(_:_:)` function has the same type as the mathFunction variable, and so this assignment is allowed by Swift’s type-checker.\n\nYou can now call the assigned function with the name `mathFunction`:",
+            "contentCode" : "func addTwoInts(_ a: Int, _ b: Int) -> Int {\n    return a + b\n}\n\nvar mathFunction: (Int, Int) -> Int = addTwoInts\n\nprint(\"Result: \\(mathFunction(2, 3))\")"
+          },
+          {
+            "contentDescription" : "You can use a function type such as `(Int, Int) -> Int`\nas a parameter type for another function. This enables you to leave some aspects of a function’s implementation for the function’s caller to provide when the function is called.\n\nHere’s an example to print the results of the math functions from the previous section:",
+            "id" : 36,
+            "contentCode" : "func addTwoInts(_ a: Int, _ b: Int) -> Int {\n    return a + b\n}\n\nfunc printMathResult(_ mathFunction: (Int, Int) -> Int,\n                     _ a: Int,\n                     _ b: Int) {\n    print(\"Result: \\(mathFunction(a, b))\")\n}\n\nprintMathResult(addTwoInts, 3, 5)",
+            "isCompleted" : false,
+            "title" : "Parameter Types",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#Function-Types-as-Parameter-Types"
+          },
+          {
+            "title" : "Return Types",
+            "isCompleted" : false,
+            "contentDescription" : "You can use a function type as the return type of another function. You do this by writing a complete function type immediately after the return arrow (`->`) of the returning function.\n\nThe next example defines two simple functions called `stepForward(_:)` and `stepBackward(_:)`. The `stepForward(_:)` function returns a value one more than its input value, and the `stepBackward(_:)` function returns a value one less than its input value. Both functions have a type of `(Int) -> Int`.\n\nThe `chooseStepFunction(backward:)` function returns the `stepForward(_:)` function or the `stepBackward(_:)` function based on a Boolean parameter called `backward`:",
+            "id" : 37,
+            "contentCode" : "func stepForward(_ input: Int) -> Int {\n    return input + 1\n}\n\nfunc stepBackward(_ input: Int) -> Int {\n    return input - 1\n}\n\nfunc chooseStepFunction(backward: Bool) -> (Int) -> Int {\n    return backward ? stepBackward : stepForward\n}\n\nvar currentValue = 3\n\n\/\/ moveNearerToZero returns a Function\nlet moveNearerToZero = chooseStepFunction(backward: currentValue > 0)\n\n\ncurrentValue = moveNearerToZero(currentValue)\nprint(currentValue)",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#Function-Types-as-Return-Types"
+          },
+          {
+            "title" : "Nested Functions",
+            "contentCode" : "func chooseStepFunction(backward: Bool) -> (Int) -> Int {\n    func stepForward(input: Int) -> Int { return input + 1 }\n    func stepBackward(input: Int) -> Int { return input - 1 }\n    return backward ? stepBackward : stepForward\n}\n\nvar currentValue = -4\nlet moveNearerToZero = chooseStepFunction(backward: currentValue > 0)\n\n\/\/ moveNearerToZero now refers to the nested stepForward() function\nwhile currentValue != 0 {\n    print(\"\\(currentValue)... \")\n    currentValue = moveNearerToZero(currentValue)\n}\nprint(\"zero!\")",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/functions#Nested-Functions",
+            "contentDescription" : "All of the functions you have encountered so far in this chapter have been examples of *global functions*, which are defined at a global scope. You can also define functions inside the bodies of other functions, known as *nested functions*.\n\nNested functions are hidden from the outside world by default, but can still be called and used by their enclosing function. An enclosing function can also return one of its nested functions to allow the nested function to be used in another scope.\n\nYou can rewrite the `chooseStepFunction(backward:)` example above to use and return nested functions:",
+            "id" : 38
+          }
+        ],
+        "id" : 3
+      }
+    ],
+    "progress" : 0,
+    "moduleType" : "Swift",
+    "completedSections" : 0,
+    "id" : 4,
+    "time" : 70,
+    "title" : "Functions",
+    "difficulty" : "Beginner"
+  },
+  {
+    "sections" : [
+      {
+        "subsections" : [
+          {
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swift\/optional#overview",
+            "contentCode" : "var ageShort: Int?\nvar ageLong: Optional<Int>",
+            "id" : 39,
+            "title" : "Introduction",
+            "contentDescription" : "Optionals are a fundamental feature in Swift. They allow you to declare variables or constants that can either hold a value or be `nil` (no value).\n\nSwift’s type system usually shows the wrapped type’s name with a trailing question mark (?) instead of showing the full type name. For example, if a variable has the type `Int?`, that’s just another way of writing `Optional<Int>`.\n",
+            "isCompleted" : false
+          },
+          {
+            "isCompleted" : false,
+            "contentDescription" : "To conditionally bind the wrapped value of an Optional instance to a new variable, use one of the optional binding control structures, including `if let`, `guard let`, and `switch`.\n\nHere are some examples:",
+            "contentCode" : "var age: Int? = nil\nvar name: String? = \"Max\"\n    \nfunc unwrappVariables() {\n        \n    if let unwrappedAge = age {\n        print(unwrappedAge)\n    } else {\n        print(\"Age is nil\")\n    }\n        \n    guard let unwrappedName = name else {\n        print(\"Name is nil\")\n        return\n    }\n        \n    print(unwrappedName)\n        \n}\n    \nunwrappVariables()",
+            "title" : "Binding",
+            "codeExercise" : {
+              "solutionCode" : [
+                "func printName(_ name: String?) {\n    if let unwrappedName = name {\n        print(unwrappedName)\n    } else {\n        print(\"Name is nil\")\n    }\n}\nprintName(\"Alice\")\nprintName(nil)"
+              ],
+              "startingCode" : "printName(\"Alice\")\nprintName(nil)",
+              "id" : 18,
+              "title" : "Learn Bindings",
+              "description" : "1) Write a function `printName` that accepts an optional string `name`.\n2) Use `if let` to bind the unwrapped `name` in a variable called `unwrappedName`.\n3) Print the `unwrappedName`.\n4) Otherwise print \"Name is nil\"."
+            },
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swift\/optional#Optional-Binding",
+            "id" : 40
+          },
+          {
+            "contentDescription" : "To safely access the properties and methods of a wrapped instance, use the postfix optional chaining operator (postfix `?`).\n\nHere is an example\n(You will learn classes in the **Module 7: Object Oriented Programming**):",
+            "isCompleted" : false,
+            "codeExercise" : {
+              "startingCode" : "...\n\nlet uppercasedName = getUppercaseName(\"Bob\")\nif let unwrappedUppercasedName = uppercasedName {\n    print(unwrappedUppercasedName)\n}",
+              "solutionCode" : [
+                "func getUppercaseName(_ name: String?) -> String? {\n    return name?.uppercased()\n}\n\nlet uppercasedName = getUppercaseName(\"Bob\")\nif let unwrappedUppercasedName = uppercasedName {\n    print(unwrappedUppercasedName)\n}"
+              ],
+              "id" : 19,
+              "description" : "1) Write a function `getUppercaseName` that accepts an optional string `name` and returns the uppercase version of the name.\n2) Use optional chaining to access the String function `uppercased()`.",
+              "title" : "Learn Chaining"
+            },
+            "id" : 41,
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swift\/optional#Optional-Chaining",
+            "title" : "Chaining",
+            "contentCode" : "class Person {\n    var residence: Residence?\n}\n\n\nclass Residence {\n    var numberOfRooms = 1\n}\n\nlet john = Person()\nif let roomCount = john.residence?.numberOfRooms {\n    print(\"John's residence has \\(roomCount) room(s).\")\n} else {\n    print(\"Unable to retrieve the number of rooms.\")\n}\n"
+          },
+          {
+            "contentCode" : "var optionalCar: String? = \"BMW\"\nprint(optionalCar ?? \"There is no car\")\n",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swift\/optional#Using-the-Nil-Coalescing-Operator",
+            "codeExercise" : {
+              "startingCode" : "...\n\nlet name = getNameOrDefault(nil)\nprint(name)",
+              "title" : "Learn Nil-Coalescing",
+              "solutionCode" : [
+                "func getNameOrDefault(_ name: String?) -> String {\n    return name ?? \"Unknown\"\n}\n\nlet name = getNameOrDefault(nil)\nprint(name)"
+              ],
+              "id" : 20,
+              "description" : "Write a function `getNameOrDefault` that accepts an optional string `name` and returns the name if it has a value or \"Unknown\" if it is nil."
+            },
+            "contentDescription" : "Use the nil-coalescing operator (??) to supply a default value in case the `Optional` instance is `nil`.\n\nHere is a simple example:\n",
+            "isCompleted" : false,
+            "title" : "Nil-Coalescing Operator",
+            "id" : 42
+          },
+          {
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swift\/optional#Unconditional-Unwrapping",
+            "contentDescription" : "When you’re certain that an instance of Optional contains a value, you can unconditionally unwrap the value by using the forced unwrap operator (postfix !).\nNote: Unconditionally unwrapping a nil instance with `!` triggers a runtime error.\n\nHere is a simple example:",
+            "isCompleted" : false,
+            "contentCode" : "var optionalCar: String? = \"BMW\"\nprint(optionalCar!)\n\n\/\/ This code will\n\/\/ crash the App\n\/\/ var crashVariable: String? = nil\n\/\/ print(crashVariable!)\n",
+            "codeExercise" : {
+              "title" : "Learn Unconditional Unwrapping",
+              "id" : 21,
+              "description" : "Write a function `forceUnwrapName` that accepts an optional string `name` and forcefully unwraps and returns the name.",
+              "solutionCode" : [
+                "func forceUnwrapName(_ name: String?) -> String {\n    return name!\n}\n\nlet name = forceUnwrapName(\"Charlie\")\nprint(name)"
+              ],
+              "startingCode" : "...\n\nlet name = forceUnwrapName(\"Charlie\")\nprint(name)"
+            },
+            "title" : "Unconditional Unwrapping",
+            "id" : 43
+          }
+        ],
+        "id" : 1,
+        "completedSubsections" : 0,
+        "title" : "Fundamentals"
+      }
+    ],
+    "difficulty" : "Intermediate",
+    "time" : 60,
+    "completedSections" : 0,
+    "progress" : 0,
+    "title" : "Optionals",
+    "moduleType" : "Swift",
+    "id" : 5
+  },
+  {
+    "moduleType" : "Swift",
+    "title" : "Collection Types",
+    "time" : 80,
+    "id" : 6,
+    "progress" : 0,
+    "completedSections" : 0,
+    "difficulty" : "Intermediate",
+    "sections" : [
+      {
+        "completedSubsections" : 0,
+        "id" : 1,
+        "title" : "Start",
+        "subsections" : [
+          {
+            "contentDescription" : "Swift provides three primary *collection types*, known as arrays, sets, and dictionaries, for storing collections of values.\nArrays are ordered collections of values. Sets are unordered collections of unique values. Dictionaries are unordered collections of key-value associations.\n\nArrays, sets, and dictionaries in Swift are always clear about the types of values and keys that they can store. This means that you can’t insert a value of the wrong type into a collection by mistake. It also means you can be confident about the type of values you will retrieve from a collection.",
+            "contentCode" : "",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes",
+            "title" : "Introduction",
+            "id" : 44
+          }
+        ]
+      },
+      {
+        "title" : "Arrays",
+        "id" : 2,
+        "subsections" : [
+          {
+            "id" : 45,
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes#Arrays",
+            "contentDescription" : "An *array* stores values of the same type in an ordered list. The same value can appear in an array multiple times at different positions.\n\nYou can create an empty array of a certain type using initializer syntax.\nSwift’s Array type also provides an initializer for creating an array of a certain size with all of its values set to the same default value. You pass this initializer a default value of the appropriate type (called `repeating`): and the number of times that value is repeated in the new array (called `count`):",
+            "title" : "Creating",
+            "contentCode" : "var arrayOfInts: [Int] = []\nvar arrayOfDoubles: [Double] = Array(repeating: 0.0, count: 3)\n\nprint(arrayOfInts)\nprint(arrayOfDoubles)"
+          },
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes#Accessing-and-Modifying-an-Array",
+            "title" : "Modifying",
+            "contentDescription" : "You access and modify an array through its methods and properties, or by using subscript syntax.\n\nHere are some examples:",
+            "contentCode" : "var shoppingList = [\"Eggs\", \"Toast\", \"Cornflakes\"]\nprint(\"The shopping list contains \\(shoppingList.count) items.\")\n\nif shoppingList.isEmpty {\n    print(\"The shopping list is empty.\")\n} else {\n    print(\"The shopping list isn't empty.\")\n}\n\n\/\/ Add\nshoppingList.append(\"Flour\")\nshoppingList += [\"Baking Powder\"]\nprint(\"The shopping list contains \\(shoppingList)\")\n\n\/\/ Access\nprint(\"The first item of the shopping list is: \\(shoppingList[0])\")\n\n\/\/ Modify\nshoppingList[0] = \"Six eggs\"\nprint(\"The first item of the shopping list is: \\(shoppingList[0])\")\n\n\/\/ Remove\nlet cornflakes = shoppingList.remove(at: 2)\nlet bakingPowder = shoppingList.removeLast()",
+            "isCompleted" : false,
+            "id" : 46
+          },
+          {
+            "contentDescription" : "You can iterate over the entire set of values in an array with the `for-in` loop:",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes#Iterating-Over-an-Array",
+            "contentCode" : "var shoppingList = [\"Eggs\", \"Toast\", \"Cornflakes\"]\n\nfor item in shoppingList {\n    print(item)\n}",
+            "isCompleted" : false,
+            "title" : "Iterating",
+            "id" : 47,
+            "codeExercise" : {
+              "title" : "Learn Arrays",
+              "solutionCode" : [
+                "var fruits = [\"Apple\", \"Banana\", \"Cherry\"]\nfruits.append(\"Orange\")\nfruits.remove(at: 2)\nfruits[0] = \"Mango\"\nfor fruit in fruits {\n    print(fruit)\n}"
+              ],
+              "startingCode" : "...",
+              "id" : 22,
+              "description" : "1) Create an array `fruits` with the values \"Apple\", \"Banana\", and \"Cherry\".\n2) Add \"Orange\" to the `fruits` array.\n3) Remove \"Cherry\" from the `fruits` array.\n4) Change \"Apple\" to \"Mango\".\n5) Iterate over the `fruits` array and print each element."
+            }
+          }
+        ],
+        "completedSubsections" : 0
+      },
+      {
+        "subsections" : [
+          {
+            "id" : 48,
+            "contentCode" : "var letters = Set<Character>()\nprint(\"letters is of type Set<Character> with \\(letters.count) items.\")\n\n\/\/ Initialize a set with an array literal\nvar favoriteGenres: Set<String> = [\"Rock\", \"Classical\", \"Hip hop\"]\nprint(favoriteGenres)",
+            "isCompleted" : false,
+            "contentDescription" : "A *set* stores distinct values of the same type in a collection with no defined ordering. You can use a set instead of an array when the order of items isn’t important, or when you need to ensure that an item only appears once.\n\nYou can create an empty set of a certain type using initializer syntax:",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes#Sets",
+            "title" : "Creating"
+          },
+          {
+            "contentCode" : "var favoriteGenres: Set<String> = [\"Rock\", \"Classical\", \"Hip hop\"]\n\nif favoriteGenres.isEmpty {\n    print(\"As far as music goes, I'm not picky.\")\n} else {\n    print(\"I have particular music preferences.\")\n}\n\nfavoriteGenres.insert(\"Jazz\")\nprint(favoriteGenres)\n\nif let removedGenre = favoriteGenres.remove(\"Rock\") {\n    print(\"\\(removedGenre)? I'm over it.\")\n} else {\n    print(\"I never much cared for that.\")\n}\n\nif favoriteGenres.contains(\"Funk\") {\n    print(\"I get up on the good foot.\")\n} else {\n    print(\"It's too funky in here.\")\n}",
+            "isCompleted" : false,
+            "contentDescription" : "You access and modify a `set` through its methods and properties.\n\nHere are some examples:",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes#Accessing-and-Modifying-a-Set",
+            "title" : "Modifying",
+            "id" : 49
+          },
+          {
+            "isCompleted" : false,
+            "title" : "Iterating",
+            "contentCode" : "var favoriteGenres: Set<String> = [\"Rock\", \"Classical\", \"Hip hop\"]\n\nfor genre in favoriteGenres {\n    print(\"\\(genre)\")\n}",
+            "contentDescription" : "You can iterate over the values in a set with a `for-in` loop.",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes#Iterating-Over-a-Set",
+            "id" : 50
+          },
+          {
+            "codeExercise" : {
+              "startingCode" : "...",
+              "description" : "1) Create a set `colors` with the values \"Red\", \"Green\", and \"Blue\".\n2) Add \"Yellow\" to the `colors` set.\n3) Remove \"Red\" from the `colors` set.\n4) Iterate over the `colors` set and print each element.\n5) Create a new set `colors2` with the values \"Yellow\", \"Black\", and \"Magenta\" and combine it with `colors` to a new set `combinedColors`.\n6) Iterate over the `combinedColors` set and print each element.",
+              "id" : 23,
+              "title" : "Learn Sets",
+              "solutionCode" : [
+                "var colors: Set = [\"Red\", \"Green\", \"Blue\"]\ncolors.insert(\"Yellow\")\ncolors.remove(\"Red\")\nfor color in colors {\n    print(color)\n}\nvar colors2: Set = [\"Yellow\", \"Black\", \"Magenta\"]\nvar combinedColors = colors.union(colors2)\nfor color in combinedColors {\n    print(color)\n}"
+              ]
+            },
+            "title" : "Set Operations",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes#Performing-Set-Operations",
+            "id" : 51,
+            "contentCode" : "let oddDigits: Set = [1, 3, 5, 7, 9]\nlet evenDigits: Set = [0, 2, 4, 6, 8]\nlet singleDigitPrimeNumbers: Set = [2, 3, 5, 7]\n\n\nlet unionDigits = oddDigits\n.union(evenDigits)\n.sorted()\nprint(unionDigits)\n\nlet intersectionDigits = oddDigits\n.intersection(evenDigits)\n.sorted()\nprint(intersectionDigits)\n\nlet subtractingDigits = oddDigits\n.subtracting(singleDigitPrimeNumbers)\n.sorted()\nprint(subtractingDigits)\n\nlet symmetricDifferenceDigits = oddDigits\n.symmetricDifference(singleDigitPrimeNumbers)\n.sorted()\nprint(symmetricDifferenceDigits)",
+            "contentDescription" : "You can efficiently perform fundamental set operations, such as combining two sets together, determining which values two sets have in common, or determining whether two sets contain all, some, or none of the same values.\n\n- Use the `intersection(_:)` method to create a new set with only the values common to both sets.\n- Use the `symmetricDifference(_:)` method to create a new set with values in either set, but not both.\n- Use the `union(_:)` method to create a new set with all of the values in both sets.\n- Use the `subtracting(_:)` method to create a new set with values not in the specified set.\n\n\nHere's a example:"
+          }
+        ],
+        "completedSubsections" : 0,
+        "title" : "Sets",
+        "id" : 3
+      },
+      {
+        "title" : "Dictonaries",
+        "id" : 4,
+        "completedSubsections" : 0,
+        "subsections" : [
+          {
+            "contentCode" : "var namesOfIntegers: [Int: String] = [:]",
+            "contentDescription" : "A *dictionary* stores associations between keys of the same type and values of the same type in a collection with no defined ordering. Each value is associated with a *unique key*, which acts as an identifier for that value within the dictionary. Unlike items in an array, items in a dictionary don’t have a specified order. You use a dictionary when you need to look up values based on their identifier, in much the same way that a real-world dictionary is used to look up the definition for a particular word.\n\nAs with arrays, you can create an empty Dictionary of a certain type by using initializer syntax:",
+            "isCompleted" : false,
+            "title" : "Creating",
+            "id" : 52,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes#Dictionaries"
+          },
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes#Accessing-and-Modifying-a-Dictionary",
+            "contentCode" : "var airports = [\"YYZ\": \"Toronto Pearson\", \"DUB\": \"Dublin\"]\nprint(\"The airports dictionary contains \\(airports.count) items.\")\n\nif airports.isEmpty {\n    print(\"The airports dictionary is empty.\")\n} else {\n    print(\"The airports dictionary isn't empty.\")\n}\n\n\/\/ Add\nairports[\"LHR\"] = \"London\"\n\n\/\/ Update\nif let oldValue = airports.updateValue(\"Dublin Airport\", forKey: \"DUB\") {\n    print(\"The old value for DUB was \\(oldValue).\")\n}\n\n\n\/\/ Access\nif let airportName = airports[\"DUB\"] {\n    print(\"The name of the airport is \\(airportName).\")\n} else {\n    print(\"That airport isn't in the airports dictionary.\")\n}\n\n\/\/ Remove\nairports[\"APL\"] = \"Apple International\"\n\/\/ \"Apple International\" isn't the real airport for APL, so delete it\nairports[\"APL\"] = nil\n\n\nif let removedValue = airports.removeValue(forKey: \"DUB\") {\n    print(\"The removed airport's name is \\(removedValue).\")\n} else {\n    print(\"The airports dictionary doesn't contain a value for DUB.\")\n}\n",
+            "title" : "Modifying",
+            "contentDescription" : "You access and modify a dictionary through its methods and properties, or by using subscript syntax.\n\nHere are some examples:",
+            "id" : 53,
+            "isCompleted" : false
+          },
+          {
+            "isCompleted" : false,
+            "contentDescription" : "You can iterate over the key-value pairs in a dictionary with a `for-in` loop. Each item in the dictionary is returned as a `(key, value)` tuple, and you can decompose the tuple’s members into temporary constants or variables as part of the iteration:",
+            "codeExercise" : {
+              "solutionCode" : [
+                "var person: [String: Any] = [\"name\": \"Alice\", \"age\": 30, \"city\": \"New York\"]\nperson[\"city\"] = \"Los Angeles\"\nperson[\"name\"] = nil\nfor (key, value) in person {\n    print(\"\\(key): \\(value)\")\n}"
+              ],
+              "title" : "Learn Dictionaries",
+              "description" : "1) Create a dictionary `person` with the keys \"name\", \"age\", and \"city\" and the corresponding values \"Alice\", 30, and \"New York\".\n2) Change the value of the key \"city\" in the `person` dictionary to \"Los Angeles\".\n3) Remove the value of the key \"name\" in the `person` dictionary.\n4) Iterate over the `person` dictionary and print each key and value.",
+              "id" : 24,
+              "startingCode" : "..."
+            },
+            "contentCode" : "var airports = [\"YYZ\": \"Toronto Pearson\", \"DUB\": \"Dublin\"]\n\nfor (airportCode, airportName) in airports {\n    print(\"\\(airportCode): \\(airportName)\")\n}",
+            "title" : "Iterating",
+            "id" : 54,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/collectiontypes#Iterating-Over-a-Dictionary"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "progress" : 0,
+    "time" : 120,
+    "id" : 7,
+    "completedSections" : 0,
+    "moduleType" : "Swift",
+    "title" : "Object oriented programing",
+    "sections" : [
+      {
+        "title" : "Classes and Structure",
+        "id" : 1,
+        "completedSubsections" : 0,
+        "subsections" : [
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/classesandstructures",
+            "contentCode" : "",
+            "title" : "Introduction",
+            "contentDescription" : "In Swift, classes and structures are versatile and flexible constructs that can be used to build your program’s code. Both classes and structures can:\n\n- Define properties to store values.\n- Define methods to provide functionality.\n- Define subscripts to provide access to their values using subscript syntax.\n- Define initializers to set up their initial state.\n- Be extended to expand their functionality beyond a default implementation.\n- Conform to protocols to provide standard functionality of a certain kind.",
+            "id" : 55,
+            "isCompleted" : false
+          },
+          {
+            "isCompleted" : false,
+            "title" : "Differences",
+            "id" : 56,
+            "contentCode" : "",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/classesandstructures#Comparing-Structures-and-Classes",
+            "contentDescription" : " There are also significant differences between classes and structures in Swift:\n\nClasses:\n1. Inheritance: Classes can inherit from other classes. This means a class can gain the characteristics of another class.\n2. Type Casting: You can check and interpret the type of a class instance at runtime.\n3. Deinitializers: Classes can define deinitializers, which allow an instance of a class to free up any resources it has assigned.\n4. Reference Counting: Classes are reference types and are managed by automatic reference counting (ARC).\n\nStructures:\n1. No Inheritance: Structures do not support inheritance. They cannot inherit from other structures.\n2. Value Types: Structures are value types. When you assign or pass around a structure, you are making a copy of it.\n3. Mutability: To modify a property of a structure, you must mark it as mutating if it changes any properties of the structure within its methods."
+          }
+        ]
+      },
+      {
+        "subsections" : [
+          {
+            "title" : "Creating a instance",
+            "contentDescription" : " Both classes and structures are declared using the class and struct keywords, respectively. Both can have properties and methods defined within them.\n\nHere’s an example:",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/classesandstructures#Definition-Syntax",
+            "id" : 57,
+            "contentCode" : "struct Resolution {\n    var width = 0\n    var height = 0\n}\n\nclass VideoMode {\n    var resolution = Resolution()\n    var interlaced = false\n    var frameRate = 0.0\n    var name: String?\n}\n\n\/\/ create instances of structures and classes using initializer syntax:\nlet someResolution = Resolution()\nlet someVideoMode = VideoMode()"
+          },
+          {
+            "contentDescription" : "When you assign an instance of a structure to a new variable or constant, or when you pass it to a function, the instance is copied.",
+            "contentCode" : "struct Resolution {\n    var width = 0\n    var height = 0\n}\n\nlet hd = Resolution(width: 1920, height: 1080)\nvar cinema = hd\n\ncinema.width = 2048\nprint(hd.width)",
+            "isCompleted" : false,
+            "title" : "Value Types",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/classesandstructures#Structures-and-Enumerations-Are-Value-Types",
+            "id" : 58
+          },
+          {
+            "contentCode" : "struct Resolution {\n    var width = 0\n    var height = 0\n}\n\n\nclass VideoMode {\n    var resolution = Resolution()\n    var interlaced = false\n    var frameRate = 0.0\n    var name: String?\n}\n\nlet hd = Resolution(width: 1920, height: 1080)\nlet tenEighty = VideoMode()\ntenEighty.resolution = hd\ntenEighty.interlaced = true\ntenEighty.name = \"1080i\"\ntenEighty.frameRate = 25.0\n\nlet alsoTenEighty = tenEighty\nalsoTenEighty.frameRate = 30.0\nprint(tenEighty.frameRate)",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/classesandstructures#Structures-and-Enumerations-Are-Value-Types",
+            "id" : 59,
+            "title" : "Reference Types",
+            "contentDescription" : "When you assign an instance of a class to a new variable or constant, or when you pass it to a function, you are referencing the same instance."
+          },
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/classesandstructures#Identity-Operators",
+            "isCompleted" : false,
+            "title" : "Identity Operators",
+            "id" : 60,
+            "contentCode" : "struct Resolution {\n    var width = 0\n    var height = 0\n}\n\n\nclass VideoMode {\n    var resolution = Resolution()\n    var interlaced = false\n    var frameRate = 0.0\n    var name: String?\n}\n\nlet hd = Resolution(width: 1920, height: 1080)\nlet tenEighty = VideoMode()\ntenEighty.resolution = hd\ntenEighty.interlaced = true\ntenEighty.name = \"1080i\"\ntenEighty.frameRate = 25.0\n\nlet alsoTenEighty = tenEighty\nalsoTenEighty.frameRate = 30.0\n\nif tenEighty === alsoTenEighty {\n    print(\"tenEighty and alsoTenEighty refer to the same VideoMode instance.\")\n}\n",
+            "contentDescription" : "Since classes are reference types, it is possible to check if two constants or variables refer to the same instance of a class using the identity operators (`===` and `!==`)."
+          }
+        ],
+        "completedSubsections" : 0,
+        "id" : 2,
+        "title" : "Declaration"
+      },
+      {
+        "title" : "Inheritance",
+        "id" : 3,
+        "completedSubsections" : 0,
+        "subsections" : [
+          {
+            "contentDescription" : "*Inheritance* is a mechanism in which one class (called a subclass) inherits the properties and methods of another class (called a superclass). In Swift, inheritance allows you to create a new class based on an existing class, thereby reusing code and adding new features to the existing class.",
+            "contentCode" : "",
+            "isCompleted" : false,
+            "title" : "Introduction",
+            "id" : 66,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/inheritance\/"
+          },
+          {
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/inheritance#Defining-a-Base-Class",
+            "id" : 67,
+            "contentDescription" : "A base class is any class that doesn’t inherit from another class.\n\n*Subclassing* is the act of basing a new class on an existing class. The subclass inherits characteristics from the existing class, which you can then refine. You can also add new characteristics to the subclass. To create a subclass, you specify the subclass's name before the superclass's name, separated by a colon.\n\n\nThe example below defines a base class called *Vehicle*. This base class defines a stored property called `currentSpeed`, with a default value of `0.0` (inferring a property type of `Double`). The `currentSpeed` property’s value is used by a read-only computed `String` property calle`description` to create a description of the vehicle.\nThe `Vehicle` base class also defines a method called `makeNoise`. This method doesn’t actually do anything for a base `Vehicle` instance.\n\n`Bicycle` is a subclass of `Vehicle`. It inherits all properties and methods from `Vehicle`, and also introduces a new property `hasBasket`.",
+            "title" : "Inherite a Base Class",
+            "contentCode" : "class Vehicle {\n    var currentSpeed = 0.0\n    var description: String {\n        return \"traveling at \\(currentSpeed) miles per hour\"\n    }\n    func makeNoise() {\n        \/\/ do nothing - an arbitrary vehicle doesn't necessarily make a noise\n    }\n}\n\nclass Bicycle: Vehicle {\n    var hasBasket = false\n}\n\nlet bicycle = Bicycle()\nprint(bicycle.description)\n",
+            "codeExercise" : {
+              "id" : 26,
+              "startingCode" : "class Person {\n    var name: String\n    var age: Int\n    \n    init(name: String, age: Int) {\n        self.name = name\n        self.age = age\n    }\n\n    func printInformations() {\n        print(\"Hello, my name is \\(name) and I am \\(age)\")\n    }\n}\n\n...\n\nlet student = Student(name: \"John\", age: 18, grade: \"A\")\nstudent.printInformations()",
+              "title" : "Learn Inheritance",
+              "solutionCode" : [
+                "class Person {\n    var name: String\n    var age: Int\n    \n    init(name: String, age: Int) {\n        self.name = name\n        self.age = age\n    }\n\n    func printInformations() {\n        print(\"Hello, my name is \\(name) and I am \\(age)\")\n    }\n}\n\nclass Student: Person {\n    var grade: String\n    \n    init(name: String, age: Int, grade: String) {\n        self.grade = grade\n        super.init(name: name, age: age)\n    }\n}\n\nlet student = Student(name: \"John\", age: 18, grade: \"A\")\nstudent.printInformations()"
+              ],
+              "description" : "1) Create a subclass `Student` that inherits from the `Person` class and has an additional property `grade`.\n2) Create an instance of the `Student` class with the name \"John\", age 18 and grade \"A\"\n\nTip: You need to call the function `super.init(name:, age:)` in the initializer to call the superclass."
+            }
+          },
+          {
+            "isCompleted" : false,
+            "contentDescription" : "You can override an inherited instance or type method to provide a tailored or alternative implementation of the method within your subclass.\n\nThe following example defines a new subclass of `Vehicle` called `Train`, which overrides the `makeNoise()` method that `Train` inherits from `Vehicle`:",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/inheritance#Overriding-Methods",
+            "contentCode" : "class Vehicle {\n    var currentSpeed = 0.0\n    var description: String {\n        return \"traveling at \\(currentSpeed) miles per hour\"\n    }\n    func makeNoise() {\n        \/\/ do nothing - an arbitrary vehicle doesn't necessarily make a noise\n    }\n}\n\nclass Train: Vehicle {\n    override func makeNoise() {\n        print(\"Choo Choo\")\n    }\n}\n\nlet train = Train()\ntrain.makeNoise()",
+            "title" : "Overriding Methods",
+            "id" : 68
+          },
+          {
+            "contentDescription" : "You can also override properties, including computed properties, to modify their behavior or provide custom getters and setters.\n\nHere, the `Car` class overrides the `description` property of its superclass `Vehicle` to add information about the car’s gear.",
+            "isCompleted" : false,
+            "contentCode" : "class Vehicle {\n    var currentSpeed = 0.0\n    var description: String {\n        return \"traveling at \\(currentSpeed) miles per hour\"\n    }\n    func makeNoise() {\n        \/\/ do nothing - an arbitrary vehicle doesn't necessarily make a noise\n    }\n}\n\nclass Car: Vehicle {\n    var gear = 1\n    override var description: String {\n        return super.description + \" in gear \\(gear)\"\n    }\n}\n\nlet car = Car()\nprint(car.description)",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/inheritance#Overriding-Properties",
+            "id" : 69,
+            "title" : "Overriding Properties"
+          },
+          {
+            "isCompleted" : false,
+            "contentDescription" : "You can prevent a method, property, or subscript from being overridden by marking it as `final`. Do this by writing the `final` modifier before the method, property, or subscript’s introducer keyword (such as `final var`, `final func`, `final class func`, and `final subscript`).\n\nIf you try to subclass `Train` or override its methods or properties, Swift will generate a compile-time error.",
+            "title" : "Preventing Overrides",
+            "contentCode" : "class Vehicle {\n    var currentSpeed = 0.0\n    var description: String {\n        return \"traveling at \\(currentSpeed) miles per hour\"\n    }\n    func makeNoise() {\n        \/\/ do nothing - an arbitrary vehicle doesn't necessarily make a noise\n    }\n}\n\nfinal class Train: Vehicle {\n    override func makeNoise() {\n        print(\"Choo Choo\")\n    }\n}",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/inheritance#Preventing-Overrides",
+            "id" : 70
+          }
+        ]
+      },
+      {
+        "subsections" : [
+          {
+            "title" : "Introduction",
+            "id" : 61,
+            "contentCode" : "",
+            "isCompleted" : false,
+            "contentDescription" : "A *protocol* defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality. Classes, structures, and enumerations can adopt protocols and provide implementations for the requirements defined in those protocols.",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols"
+          },
+          {
+            "title" : "Defining",
+            "id" : 62,
+            "contentCode" : "protocol SomeProtocol {\n    var mustBeSettable: Int { get set }\n    var doesNotNeedToBeSettable: Int { get }\n    static var someTypeProperty: Int { get set }\n    \n    func someMethod()\n    mutating func changeSomething()\n    static func someTypeMethod()\n}",
+            "contentDescription" : "In this example, `SomeProtocol` defines an instance property requirement (`mustBeSettable` and `doesNotNeedToBeSettable`), a type property requirement (`someTypeProperty`), an instance method requirement (`someMethod`), a mutating instance method requirement (`changeSomething`), and a type method requirement (`someTypeMethod`).",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols"
+          },
+          {
+            "id" : 63,
+            "isCompleted" : false,
+            "contentCode" : "protocol FullyNamed {\n    var fullName: String { get }\n}\n\nstruct Person: FullyNamed {\n    var fullName: String\n}\n\nlet john = Person(fullName: \"John Appleseed\")\nprint(john.fullName)",
+            "contentDescription" : "A `protocol` can require any conforming type to provide an instance property or instance method with a particular name and type. The protocol does not specify whether the property should be a stored property or a computed property. It only specifies the required property name and type.",
+            "title" : "Adopting and Conforming",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols#Property-Requirements",
+            "codeExercise" : {
+              "solutionCode" : [
+                "protocol Vehicle {\n    func drive()\n}\n\nclass Car: Vehicle {\n    func drive() {\n        print(\"Driving a car\")\n    }\n}\n\nlet car = Car()\ncar.drive()"
+              ],
+              "description" : "1) Define a protocol `Vehicle` with a method `drive`.\n2) Create a class `Car` that adopts the `Vehicle` protocol and implements the `drive` method.\n3) The method `drive` should print \"Driving a car\".\n4) Create an instance of the `Car` class call the function `drive()`.",
+              "title" : "Learn Protocols",
+              "id" : 27,
+              "startingCode" : ""
+            }
+          },
+          {
+            "contentDescription" : "A `protocol` can inherit one or more other protocols and can add further requirements on top of the requirements it inherits.",
+            "isCompleted" : false,
+            "id" : 64,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols#Protocol-Inheritance",
+            "contentCode" : "protocol SomeProtocol { }\nprotocol AnotherProtocol { }\n\nprotocol InheritingProtocol: SomeProtocol, AnotherProtocol {\n    \/\/ additional requirements go here\n}",
+            "title" : "Inheritance"
+          },
+          {
+            "title" : "Composition",
+            "contentDescription" : "You can combine multiple protocols into a single requirement using a `protocol` composition.",
+            "contentCode" : "protocol Named {\n    var name: String { get }\n}\n\nprotocol Aged {\n    var age: Int { get }\n}\n\nstruct Person: Named, Aged {\n    var name: String\n    var age: Int\n}\n\nfunc wishHappyBirthday(to celebrator: Named & Aged) {\n    print(\"Happy birthday, \\(celebrator.name), you're \\(celebrator.age)!\")\n}\n\nlet birthdayPerson = Person(name: \"John\", age: 21)\nwishHappyBirthday(to: birthdayPerson)",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/protocols#Protocol-Composition",
+            "isCompleted" : false,
+            "id" : 65
+          }
+        ],
+        "completedSubsections" : 0,
+        "id" : 4,
+        "title" : "Protocols"
+      },
+      {
+        "title" : "Extensions",
+        "subsections" : [
+          {
+            "contentCode" : "",
+            "isCompleted" : false,
+            "title" : "Introduction",
+            "contentDescription" : "*Extensions* add new functionality to an existing class, structure, enumeration, or protocol type. This includes the ability to extend types for which you do not have access to the original source code (known as retroactive modeling).",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/extensions",
+            "id" : 71
+          },
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/extensions#Extension-Syntax",
+            "isCompleted" : false,
+            "id" : 72,
+            "codeExercise" : {
+              "description" : "1) Create an extension for the `String` class that adds a method `reversedString` which returns the reversed string.\n2) Call the method `reversedString` with the String \"hello\" and print the result.\n\nTip: Use the String method `reversed()`.",
+              "solutionCode" : [
+                "extension String {\n    func reversedString() -> String {\n        return String(self.reversed())\n    }\n}\n\nprint(\"hello\".reversedString())"
+              ],
+              "id" : 28,
+              "startingCode" : "...",
+              "title" : "Learn Extensions"
+            },
+            "contentCode" : "extension Double {\n    var km: Double { return self * 1_000.0 }\n    var m: Double { return self }\n    var cm: Double { return self \/ 100.0 }\n    var mm: Double { return self \/ 1_000.0 }\n    var ft: Double { return self \/ 3.28084 }\n\n    func printCurrentValue() {\n        print(\"The current value is \\(self)\")\n    }\n}\n\nlet number = 25.4\nprint(\"One inch is \\(number.mm) meters\")\nnumber.printCurrentValue()",
+            "title" : "Basic Syntax",
+            "contentDescription" : "Declare extensions with the `extension` keyword:\n\nExtensions can add computed instance properties, computed type properties and new methods to existing types."
+          },
+          {
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/extensions#Mutating-Instance-Methods",
+            "id" : 73,
+            "title" : "Mutating Instance Methods",
+            "contentDescription" : "Instance methods added with an extension can also modify (or *mutate*) the instance itself. Structure and enumeration methods that modify `self` or its properties must mark the instance method as `mutating`, just like mutating methods from an original implementation.\n\nThe example below adds a new mutating method called square to Swift’s Int type, which squares the original value:",
+            "contentCode" : "extension Int {\n    mutating func square() {\n        self = self * self\n    }\n}\n\nvar someInt = 3\nsomeInt.square()\nprint(someInt)"
+          }
+        ],
+        "id" : 5,
+        "completedSubsections" : 0
+      }
+    ],
+    "difficulty" : "Intermediate"
+  },
+  {
+    "progress" : 0,
+    "title" : "Error Handling",
+    "moduleType" : "Swift",
+    "id" : 8,
+    "sections" : [
+      {
+        "title" : "Fundamentals",
+        "id" : 1,
+        "subsections" : [
+          {
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/errorhandling",
+            "contentDescription" : "*Error handling* is the process of responding to and recovering from error conditions in your program. Swift provides first-class support for throwing, catching, propagating, and manipulating recoverable errors at runtime.\n\nSome operations aren’t guaranteed to always complete execution or produce a useful output. Optionals are used to represent the absence of a value, but when an operation fails, it’s often useful to understand what caused the failure, so that your code can respond accordingly.\n\nAs an example, consider the task of reading and processing data from a file on disk. There are a number of ways this task can fail, including the file not existing at the specified path, the file not having read permissions, or the file not being encoded in a compatible format. Distinguishing among these different situations allows a program to resolve some errors and to communicate to the user any errors it can’t resolve.",
+            "title" : "Start",
+            "contentCode" : "",
+            "id" : 74
+          },
+          {
+            "contentCode" : "enum VendingMachineError: Error {\ncase invalidSelection\ncase insufficientFunds(coinsNeeded: Int)\ncase outOfStock\n}",
+            "id" : 75,
+            "isCompleted" : false,
+            "title" : "Representing \/ Throwing Errors",
+            "contentDescription" : "In Swift, errors are represented by values of types that conform to the `Error protocol`. This empty protocol indicates that a type can be used for error handling.\n\nSwift enumerations ( are particularly well suited to modeling a group of related error conditions, with associated values allowing for additional information about the nature of an error to be communicated. For example, here’s how you might represent the error conditions of operating a vending machine inside a game:",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/errorhandling#Representing-and-Throwing-Errors"
+          },
+          {
+            "title" : "Handling Errors",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/errorhandling#Handling-Errors",
+            "contentDescription" : "There are four ways to handle errors in Swift:\n\n1. Propagating Errors Using `throws`\nA function or method that can throw an error must be marked with the `throws` keyword. When calling this function, you must handle the error using a `try` keyword.\n\n2. Do-Catch\nYou can handle errors using a `do-catch` block. Inside the do block, you use try to call functions that can throw errors. In the catch blocks, you handle the errors.\n\n3. Optional Try?\nYou can convert an error to an optional value using `try?`. If an error is thrown, the expression evaluates to `nil`.\n\n4. Force Try!\nYou can disable error propagation using `try!`, which will cause a runtime error if an error is thrown.\n\n\nHere are some examples:",
+            "codeExercise" : {
+              "id" : 29,
+              "solutionCode" : [
+                "enum LoginError: Error {\n    case invalidUsername, invalidPassword\n}\n\nfunc login(username: String, password: String) throws {\n    if username != \"admin\" {\n        throw LoginError.invalidUsername\n    }\n    if password != \"1234\" {\n        throw LoginError.invalidPassword\n    }\n    print(\"Login successful\")\n}\n\ndo {\n    try login(username: \"admin\", password: \"1234\")\n} catch LoginError.invalidUsername {\n    print(\"Invalid username\")\n} catch LoginError.invalidPassword {\n    print(\"Invalid password\")\n} catch {\n    print(\"Other error\")\n}"
+              ],
+              "description" : "1) Define a `LoginError` enumeration that adopts the `Error` protocol and has the cases `invalidUsername` and `invalidPassword`.\n2) Write a function `login` that checks a username and password and throws an error if the inputs are invalid.\n    2.1) If username is not \"admin\" throw an error.\n    2.2) If password is not \"1234\" throw an error.\n    2.3) Print \"Login successful\" after both checks.\n3) Improve the code below with `do-catch`",
+              "title" : "Learn Errors",
+              "startingCode" : "...\n\ntry login(username: \"admin\", password: \"1234\")\nprint(\"Invalid username\")\nprint(\"Invalid password\")\nprint(\"Other error\")"
+            },
+            "contentCode" : "enum DivisionError: Error {\n    case divisionByZero\n}\n\n\/\/ 1.\nfunc divide(_ numerator: Double, by denominator: Double) throws -> Double {\n    if denominator == 0 {\n        throw DivisionError.divisionByZero\n    }\n    return numerator \/ denominator\n}\n\n\/\/ 2.\ndo {\n    let result = try divide(10, by: 2)\n    print(\"Result: \\(result)\")  \/\/ This will print: Result: 5.0\n} catch DivisionError.divisionByZero {\n    print(\"Error: Cannot divide by zero.\")\n} catch {\n    print(\"An unexpected error occurred: \\(error).\")\n}\n\ndo {\n    let result = try divide(10, by: 0)\n    print(\"Result: \\(result)\")  \/\/ This will not execute\n} catch DivisionError.divisionByZero {\n    print(\"Error: Cannot divide by zero.\")  \/\/ This will print\n} catch {\n    print(\"An unexpected error occurred: \\(error).\")\n}\n\n\n\/\/ 3.\nlet optionalTry = try? divide(10, by: 0)\nprint(optionalTry ?? \"There was an error\")\n\n\/\/ 4.\nlet forceTry = try! divide(10, by: 2)\n\/\/ (10, by: 0), would crash the code\nprint(forceTry)",
+            "id" : 76
+          }
+        ],
+        "completedSubsections" : 0
+      }
+    ],
+    "time" : 45,
+    "completedSections" : 0,
+    "difficulty" : "Intermediate"
+  },
+  {
+    "title" : "Functional Programming",
+    "moduleType" : "Swift",
+    "progress" : 0,
+    "difficulty" : "Advanced",
+    "sections" : [
+      {
+        "completedSubsections" : 0,
+        "subsections" : [
+          {
+            "id" : 77,
+            "contentCode" : "",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/closures",
+            "contentDescription" : "*Closures* are self-contained blocks of functionality that can be passed around and used in your code. Closures in Swift are similar to closures, anonymous functions, lambdas, and blocks in other programming languages.\n\nClosures can capture and store references to any constants and variables from the context in which they’re defined. This is known as *closing* over those constants and variables. Swift handles all of the memory management of capturing for you.",
+            "title" : "Introduction"
+          },
+          {
+            "isCompleted" : false,
+            "contentCode" : "let greeting = { (name: String) -> String in\n    return \"Hello, \\(name)!\"\n}\n\nprint(greeting(\"John\"))",
+            "contentDescription" : "The *parameters* in closure expression syntax can be in-out parameters, but they can’t have a default value. Variadic parameters can be used if you name the variadic parameter. Tuples can also be used as parameter types and return types.\n\nClosure expression syntax has the following general form:",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/closures#Closure-Expression-Syntax",
+            "codeExercise" : {
+              "startingCode" : "let add: ... =\n\nlet result = add(2, 3)\nprint(result)",
+              "solutionCode" : [
+                "let add: (Int, Int) -> Int = { (a, b) in\n    return a + b\n}\nlet result = add(2, 3)\nprint(result)"
+              ],
+              "title" : "Learn Closures",
+              "description" : "Write a simple closure (`add`) that adds two `Int` (`a` and `b`) values and returns the result.",
+              "id" : 30
+            },
+            "id" : 78,
+            "title" : "Example"
+          },
+          {
+            "contentCode" : "func someFunctionThatTakesAClosure(closure: () -> Void) {\n    closure()\n}\n\n\/\/ Here's how you call this function without using a trailing closure:\n\n\nsomeFunctionThatTakesAClosure(closure: {\n    print(\"Hello World\")\n})\n\n\n\/\/ Here's how you call this function with a trailing closure instead:\n\n\nsomeFunctionThatTakesAClosure() {\n    print(\"Hello World with Trailing Closures\")\n}",
+            "title" : "Trailing Closures",
+            "contentDescription" : "If you need to pass a closure expression to a function as the function’s final argument and the closure expression is long, it can be useful to write it as a trailing closure instead. You write a *trailing closure* after the function call’s parentheses, even though the trailing closure is still an argument to the function. When you use the trailing closure syntax, you don’t write the argument label for the first closure as part of the function call. A function call can include multiple trailing closures; however, the first few examples below use a single trailing closure.",
+            "id" : 79,
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/closures#Trailing-Closures"
+          },
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/closures#Capturing-Values",
+            "contentCode" : "func makeIncrementer(forIncrement amount: Int) -> () -> Int {\n    var runningTotal = 0\n    func incrementer() -> Int {\n        runningTotal += amount\n        return runningTotal\n    }\n    return incrementer\n}\n\nlet incrementer = makeIncrementer(forIncrement: 10)\nprint(incrementer())\nprint(incrementer())\nprint(incrementer())",
+            "id" : 80,
+            "title" : "Capturing Values",
+            "contentDescription" : "A closure can *capture* constants and variables from the surrounding context in which it’s defined. The closure can then refer to and modify the values of those constants and variables from within its body, even if the original scope that defined the constants and variables no longer exists.\nIn Swift, the simplest form of a closure that can capture values is a nested function, written within the body of another function. A nested function can capture any of its outer function’s arguments and can also capture any constants and variables defined within the outer function.\n\n\nHere’s an example of a function called `makeIncrementer`, which contains a nested function called `incrementer`. The nested `incrementer()` function captures two values, `runningTotal` and `amount`, from its surrounding context. After capturing these values, `incrementer` is returned by `makeIncrementer` as a closure that increments `runningTotal` by amount each time it’s called.",
+            "isCompleted" : false,
+            "codeExercise" : {
+              "description" : "Write a closure that captures an `Int` variable and increments its value.",
+              "startingCode" : "var counter = 0\n\n...\n\nincrementCounter()\nprint(counter)",
+              "title" : "Learn Capturing Values",
+              "solutionCode" : [
+                "var counter = 0\nlet incrementCounter = {\n    counter += 1\n}\nincrementCounter()\nprint(counter)"
+              ],
+              "id" : 31
+            }
+          }
+        ],
+        "title" : "Closures",
+        "id" : 1
+      },
+      {
+        "id" : 2,
+        "title" : "Generics",
+        "completedSubsections" : 0,
+        "subsections" : [
+          {
+            "isCompleted" : false,
+            "title" : "Introduction",
+            "contentDescription" : "*Generic* code enables you to write flexible, reusable functions and types that can work with any type, subject to requirements that you define. You can write code that avoids duplication and expresses its intent in a clear, abstracted manner.\n\nGenerics are one of the most powerful features of Swift, and much of the Swift standard library is built with generic code. In fact, you’ve been using generics throughout the Language Guide, even if you didn’t realize it. For example, Swift’s `Array` and `Dictionary` types are both generic collections. You can create an array that holds `Int` values, or an array that holds `String` values, or indeed an array for any other type that can be created in Swift. Similarly, you can create a dictionary to store values of any specified type, and there are no limitations on what that type can be.",
+            "id" : 81,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/generics#The-Problem-That-Generics-Solve",
+            "contentCode" : ""
+          },
+          {
+            "id" : 82,
+            "title" : "Generic functions",
+            "codeExercise" : {
+              "title" : "Learn Generic Functions",
+              "description" : "Write a generic function `square` that calculates and returns the square of a number.\n\nTip: `T` must conform to the `Numeric` protocol.",
+              "id" : 32,
+              "startingCode" : "...\n\nvar double = square(2.5)\nvar integer = square(10)\nprint(double)\nprint(integer)",
+              "solutionCode" : [
+                "func square<T: Numeric>(_ number: T) -> T {\n    return number * number\n}\n\nvar double = square(2.5)\nvar integer = square(10)\nprint(double)\nprint(integer)"
+              ]
+            },
+            "contentDescription" : "*Generic functions can work with any type.*\n\nHere's a example of the generic version of the function `swapTwoValues`. It uses a placeholder type name (called `T`, in this case) instead of an actual type name (such as `Int`, `String`, or `Double`). The placeholder type name doesn’t say anything about what T must be, but it does say that both a and b must be of the same type `T`, whatever `T` represents. The actual type to use in place of `T` is determined each time the `swapTwoValues(_:_:)` function is called.",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/generics#Generic-Functions",
+            "contentCode" : "func swapTwoValues<T>(_ a: inout T, _ b: inout T) {\n    let temporaryA = a\n    a = b\n    b = temporaryA\n}\n\nvar someInt = 5\nvar anotherInt = 10\nswapTwoValues(&someInt, &anotherInt)\nprint(someInt)\nprint(anotherInt)\n\nvar someString = \"hello\"\nvar anotherString = \"world\"\nswapTwoValues(&someString, &anotherString)\nprint(someString)\nprint(anotherString)",
+            "isCompleted" : false
+          },
+          {
+            "title" : "Generic Types",
+            "contentCode" : "struct Stack<Element> {\n    var items: [Element] = []\n    mutating func push(_ item: Element) {\n        items.append(item)\n    }\n    mutating func pop() -> Element {\n        return items.removeLast()\n    }\n}\n\nvar stackOfInts = Stack<Int>()\nstackOfInts.push(3)\nstackOfInts.push(5)\nprint(stackOfInts.items)\nprint(stackOfInts.pop())",
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/generics#Generic-Types",
+            "id" : 83,
+            "contentDescription" : "In addition to generic functions, Swift enables you to define your own generic types. These are custom classes, structures, and enumerations that can work with any type, in a similar way to `Array` and `Dictionary`.\n\n\nThis example shows you how to write a generic collection type called `Stack`. A stack is an ordered set of values, similar to an array, but with a more restricted set of operations than Swift’s `Array` type. An array allows new items to be inserted and removed at any location in the array. A stack, however, allows new items to be appended only to the end of the collection (known as pushing a new value on to the stack). Similarly, a stack allows items to be removed only from the end of the collection (known as popping a value off the stack)."
+          }
+        ]
+      }
+    ],
+    "id" : 9,
+    "completedSections" : 0,
+    "time" : 90
+  },
+  {
+    "moduleType" : "Swift",
+    "difficulty" : "Advanced",
+    "time" : 60,
+    "title" : "Advanced Swift-Lectures",
+    "completedSections" : 0,
+    "progress" : 0,
+    "sections" : [
+      {
+        "id" : 1,
+        "completedSubsections" : 0,
+        "subsections" : [
+          {
+            "contentCode" : "",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/properties#Property-Observers",
+            "title" : "Introduction",
+            "isCompleted" : false,
+            "id" : 84,
+            "contentDescription" : "Property observers observe and respond to changes in a property’s value. Property observers are called every time a property’s value is set, even if the new value is the same as the property’s current value.\n\n\nYou have the option to define either or both of these observers on a property:\n\n• `willSet` is called just before the value is stored.\n• `didSet` is called immediately after the new value is stored.\n\nIf you implement a `willSet` observer, it’s passed the new property value as a constant parameter. You can specify a name for this parameter as part of your `willSet` implementation. If you don’t write the parameter name and parentheses within your implementation, the parameter is made available with a default parameter name of `newValue`.\n\nSimilarly, if you implement a `didSet` observer, it’s passed a constant parameter containing the old property value. You can name the parameter or use the default parameter name of `oldValue`. If you assign a value to a property within its own `didSet` observer, the new value that you assign replaces the one that was just set."
+          },
+          {
+            "isCompleted" : false,
+            "contentDescription" : "Here’s an example of `willSet` and `didSet` in action. The example below defines a new class called `StepCounter`, which tracks the total number of steps that a person takes while walking. This class might be used with input data from a pedometer or other step counter to keep track of a person’s exercise during their daily routine.",
+            "title" : "Example",
+            "contentCode" : "class StepCounter {\n    var totalSteps: Int = 0 {\n        willSet(newTotalSteps) {\n            print(\"About to set totalSteps to \\(newTotalSteps)\")\n        }\n        didSet {\n            if totalSteps > oldValue  {\n                print(\"Added \\(totalSteps - oldValue) steps\")\n            }\n        }\n    }\n}\nlet stepCounter = StepCounter()\nstepCounter.totalSteps = 200\nstepCounter.totalSteps = 360\nstepCounter.totalSteps = 896",
+            "codeExercise" : {
+              "startingCode" : "...",
+              "title" : "Learn Property Observers",
+              "id" : 33,
+              "solutionCode" : [
+                "class BankAccount {\n    var balance: Double = 0.0 {\n        willSet {\n            print(\"Balance is about to change to \\(newValue)\")\n        }\n        didSet {\n            if balance > oldValue {\n                print(\"Deposited \\(balance - oldValue) units\")\n            } else {\n                print(\"Withdrew \\(oldValue - balance) units\")\n            }\n        }\n    }\n}\n\nlet account = BankAccount()\naccount.balance = 100.0\naccount.balance = 75.0"
+              ],
+              "description" : "1) Create a class `BankAccount` with a property `balance` of type `Double`.\n2) Use `willSet` and `didSet` observers.\n   2.1) `willSet` should print \"Balance is about to change to (newValue)\".\n   2.2) `didSet` should print \"Deposited (balance - oldValue) units\" if the balance increased, or \"Withdrew (oldValue - balance) units\" if the balance decreased.\n3) Create an instance `account` and change the balance to 100.0 and to 75.0"
+            },
+            "id" : 85,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/properties#Property-Observers"
+          }
+        ],
+        "title" : "Property Observers"
+      },
+      {
+        "id" : 2,
+        "subsections" : [
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/typecasting",
+            "title" : "Introduction",
+            "isCompleted" : false,
+            "contentDescription" : "*Type casting* is a way to check the type of an instance, or to treat that instance as a different superclass or subclass from somewhere else in its own class hierarchy.\nType casting in Swift is implemented with the `is` and `as` operators. These two operators provide a simple and expressive way to check the type of a value or cast a value to a different type.",
+            "contentCode" : "",
+            "id" : 86
+          },
+          {
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/typecasting#Checking-Type",
+            "contentCode" : "class Animal {}\nclass Dog: Animal {}\nclass Cat: Animal {}\n\nlet animals: [Animal] = [Dog(), Cat(), Dog()]\n\nvar dogCount = 0\nvar catCount = 0\n\nfor animal in animals {\n    if animal is Dog {\n        dogCount += 1\n    } else if animal is Cat {\n        catCount += 1\n    }\n}\n\nprint(\"Number of dogs: \\(dogCount)\")\nprint(\"Number of cats: \\(catCount)\")\n",
+            "title" : "Check operator (is)",
+            "id" : 87,
+            "isCompleted" : false,
+            "contentDescription" : "Use the *type check operator* (`is`) to check whether an instance is of a certain subclass type. The type check operator returns `true` if the instance is of that subclass type and false if it’s not.\n\nIn this example, the `is` keyword is used to check if each `animal` in the animals array is a `Dog` or a `Cat`. Based on the result, the respective counters are incremented"
+          },
+          {
+            "id" : 88,
+            "isCompleted" : false,
+            "contentDescription" : "A constant or variable of a certain class type may actually refer to an instance of a subclass behind the scenes. Where you believe this is the case, you can try to downcast to the subclass type with a *type cast operator* (`as?` or `as!`)\n\nBecause downcasting can fail, the type cast operator comes in two different forms. The conditional form, `as?`, returns an optional value of the type you are trying to downcast to. The forced form, `as!`, attempts the downcast and force-unwraps the result as a single compound action.\n\nUse the conditional form of the type cast operator (`as?`) when you aren’t sure if the downcast will succeed. This form of the operator will always return an optional value, and the value will be nil if the downcast was not possible. This enables you to check for a successful downcast.\n\nUse the forced form of the type cast operator (`as!`) only when you are sure that the downcast will always succeed. This form of the operator will trigger a runtime error if you try to downcast to an incorrect class type.",
+            "contentCode" : "",
+            "title" : "Downcasting Intro",
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/typecasting#Downcasting"
+          },
+          {
+            "isCompleted" : false,
+            "linkDocumentation" : "https:\/\/docs.swift.org\/swift-book\/documentation\/the-swift-programming-language\/typecasting#Downcasting",
+            "contentDescription" : "In this example, `dog` safely attempts to downcast `animal` to a `Dog`.\n\nThe variable `forcedDog` forcibly downcasts `animal` to a `Dog`, which will crash if `animal` is not actually a `Dog`.",
+            "codeExercise" : {
+              "startingCode" : "class Vehicle {}\nclass Car: Vehicle {\n    func drive() {\n        print(\"Driving a car\")\n    }\n}\nclass Bike: Vehicle {\n    func ride() {\n        print(\"Riding a bike\")\n    }\n}\n\nlet vehicles: [Vehicle] = [Car(), Bike(), Car()]\n\n...\n\ndescribeVehicles(vehicles: vehicles)",
+              "id" : 34,
+              "solutionCode" : [
+                "class Vehicle {}\nclass Car: Vehicle {\n    func drive() {\n        print(\"Driving a car\")\n    }\n}\nclass Bike: Vehicle {\n    func ride() {\n        print(\"Riding a bike\")\n    }\n}\n\nlet vehicles: [Vehicle] = [Car(), Bike(), Car()]\n\nfunc describeVehicles(vehicles: [Vehicle]) {\n    for vehicle in vehicles {\n        if let car = vehicle as? Car {\n            car.drive()\n        } else if let bike = vehicle as? Bike {\n            bike.ride()\n        }\n    }\n}\n\ndescribeVehicles(vehicles: vehicles)"
+              ],
+              "description" : "Write a function `describeVehicles` that accepts an array of `Vehicle` objects and prints \"Driving a car\" for each Car object and \"Riding a bike\" for each `Bike` object.",
+              "title" : "Learn Type Casting"
+            },
+            "id" : 89,
+            "title" : "Downcasting Example",
+            "contentCode" : "class Animal {}\nclass Dog: Animal {}\n\nlet animal: Animal = Dog()\n\nif let dog = animal as? Dog {\n    print(\"Animal is a Dog: \\(dog)\")\n}\n\nlet forcedDog = animal as! Dog"
+          }
+        ],
+        "completedSubsections" : 0,
+        "title" : "Type Casting"
+      }
+    ],
+    "id" : 10
+  },
+  {
+    "id" : 11,
+    "difficulty" : "Beginner",
+    "moduleType" : "SwiftUI",
+    "completedSections" : 0,
+    "progress" : 0,
+    "title" : "Introduction to SwiftUI",
+    "time" : 45,
+    "sections" : [
+      {
+        "completedSubsections" : 0,
+        "subsections" : [
+          {
+            "linkDocumentation" : "https:\/\/developer.apple.com\/xcode\/swiftui\/",
+            "title" : "Introduction",
+            "contentDescription" : "SwiftUI helps you build great-looking apps across all Apple platforms with the power of Swift — and surprisingly little code. You can bring even better experiences to everyone, on any Apple device, using just one set of tools and APIs.",
+            "isCompleted" : false,
+            "id" : 89,
+            "contentCode" : ""
+          },
+          {
+            "title" : "Declarative Syntax",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/xcode\/swiftui\/",
+            "isCompleted" : false,
+            "contentCode" : "struct TextView: View {\n    var body: some View {\n        Text(\"Hello World\")\n            .font(.system(size: 32))\n            .foregroundColor(.red)\n    }\n}",
+            "id" : 90,
+            "contentDescription" : "SwiftUI uses a declarative syntax, so you can simply state what your user interface should do. For example, you can write that you want a list of items consisting of text fields, then describe alignment, font, and color for each field. Your code is simpler and easier to read than ever before, saving you time and maintenance.\n\nThe following example displays a Text of \"Hello World\" with a font size of 32 and color red:",
+            "codeExercise" : {
+              "description" : "Create a `GreetingView` struct in SwiftUI that displays the text \"Welcome to SwiftUI!\" with a font size of 30 and color green.",
+              "title" : "Create a Greeting View",
+              "solutionCode" : [
+                "struct GreetingView: View {\n    var body: some View {\n        Text(\"Welcome to SwiftUI!\")\n            .font(.system(size: 30))\n            .foregroundColor(.green)\n    }\n}"
+              ],
+              "startingCode" : "struct GreetingView: View {\n    var body: some View {\n        ...\n    }\n}",
+              "id" : 35
+            }
+          }
+        ],
+        "id" : 1,
+        "title" : "Basics"
+      },
+      {
+        "id" : 2,
+        "completedSubsections" : 0,
+        "title" : "Layouts",
+        "subsections" : [
+          {
+            "title" : "VStack",
+            "contentCode" : "struct VStackView: View {\n    var body: some View {\n        VStack(\n                alignment: .leading,\n                spacing: 10\n            ) {\n                ForEach(\n                    1...10,\n                    id: \\.self\n                ) {\n                    Text(\"Item \\($0)\")\n                }\n            }\n    }\n}",
+            "codeExercise" : {
+              "id" : 36,
+              "solutionCode" : [
+                "struct SimpleVStackView: View {\n    var body: some View {\n        VStack(\n            alignment: .center,\n            spacing: 15\n        ) {\n            ForEach(1...3, id: \\.self) { item in\n                Text(\"Item \\(item)\")\n            }\n        }\n    }\n}"
+              ],
+              "description" : "Create a `SimpleVStackView` struct in SwiftUI that displays a vertical stack of 3 text views, each showing the text \"Item X\" where X is the item number, with a spacing of 15 and center alignment.",
+              "startingCode" : "struct SimpleVStackView: View {\n    var body: some View {\n        VStack {\n            ...\n        }\n    }\n}",
+              "title" : "Create a Simple VStack"
+            },
+            "isCompleted" : false,
+            "id" : 91,
+            "contentDescription" : "A view that arranges its subviews in a vertical line.\n\nThe following example shows a simple vertical stack of 10 text views, with a spacing of 10 and an alignment of `leading`:",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/vstack"
+          },
+          {
+            "title" : "HStack",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/hstack",
+            "id" : 92,
+            "contentDescription" : "A view that arranges its subviews in a horizontal line.\n\nThe fThe following example shows a simple horizontal stack of five text views, with a spacing of 5 and an alignment of `top`:",
+            "isCompleted" : false,
+            "contentCode" : "struct HStackView: View {\n    var body: some View {\n        HStack(\n                alignment: .top,\n                spacing: 10\n            ) {\n                ForEach(\n                    1...5,\n                    id: \\.self\n                ) {\n                    Text(\"Item \\($0)\")\n                }\n            }\n    }\n}",
+            "codeExercise" : {
+              "title" : "Create a Complex HStack",
+              "id" : 37,
+              "startingCode" : "struct ComplexHStackView: View {\n    var body: some View {\n        HStack {\n            ...\n        }\n    }\n}",
+              "description" : "Create a `ComplexHStackView` struct in SwiftUI that displays a horizontal stack of 4 text views, each showing the text \"Element X\" where X is the element number, with a spacing of 20 and bottom alignment.",
+              "solutionCode" : [
+                "struct ComplexHStackView: View {\n    var body: some View {\n        HStack(\n            alignment: .bottom,\n            spacing: 20\n        ) {\n            ForEach(1...4, id: \\.self) { element in\n                Text(\"Element \\(element)\")\n            }\n        }\n    }\n}"
+              ]
+            }
+          },
+          {
+            "contentCode" : "struct ZStackView: View {\n    var body: some View {\n        ZStack {\n            Circle()\n                .fill(Color.blue)\n                .frame(width: 100, height: 100)\n            Text(\"Center\")\n                .foregroundColor(.white)\n            }\n    }\n}",
+            "title" : "ZStack",
+            "codeExercise" : {
+              "description" : "Create a `OverlayZStackView` struct in SwiftUI that displays a green rectangle with a width and height of 200 points, and overlays a pink text \"Center View\" on top of it.",
+              "startingCode" : "struct OverlayZStackView: View {\n    var body: some View {\n        ZStack {\n            ...\n        }\n    }\n}",
+              "title" : "Overlay Views in ZStack",
+              "id" : 38,
+              "solutionCode" : [
+                "struct OverlayZStackView: View {\n    var body: some View {\n        ZStack {\n            Rectangle()\n                .fill(Color.green)\n                .frame(width: 200, height: 200)\n            Text(\"Center View\")\n                .foregroundColor(.pink)\n        }\n    }\n}"
+              ]
+            },
+            "id" : 93,
+            "isCompleted" : false,
+            "contentDescription" : "The `ZStack` assigns each successive subview a higher z-axis value than the one before it, meaning later subviews appear “on top” of earlier ones.\n\nThe following example uses a `ZStack` to overlay a white \"Center\" text on top of a blue circle with a width and height of 100 points:",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/zstack"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title" : "State Management in SwiftUI",
+    "moduleType" : "SwiftUI",
+    "sections" : [
+      {
+        "subsections" : [
+          {
+            "id" : 94,
+            "title" : "State",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/state",
+            "contentDescription" : "A property wrapper type that can read and write a value managed by SwiftUI.\n\nUse state as the single source of truth for a given value type that you store in a view hierarchy. Create a state value in a `View` by applying the `@State` attribute to a property declaration and providing an initial value. Declare state as private to prevent setting it in a memberwise initializer, which can conflict with the storage management that SwiftUI provides:",
+            "contentCode" : "struct PlayButton: View {\n    @State private var isPlaying: Bool = false \/\/ Create the state.\n\n\n    var body: some View {\n        Button(isPlaying ? \"Pause\" : \"Play\") { \/\/ Read the state.\n            isPlaying.toggle() \/\/ Write the state.\n        }\n    }\n}",
+            "codeExercise" : {
+              "title" : "Switch between On and Off",
+              "id" : 39,
+              "startingCode" : "struct ToggleSwitch: View {\n    @State private var isOn: Bool = false\n\n    var body: some View {\n        ...\n    }\n}",
+              "description" : "Create a `ToggleSwitch` struct in SwiftUI that switches between \"On\" and \"Off\" when clicked, using a state variable.",
+              "solutionCode" : [
+                "struct ToggleSwitch: View {\n    @State private var isOn: Bool = false\n\n    var body: some View {\n        Button(isOn ? \"Off\" : \"On\") {\n            isOn.toggle()\n        }\n    }\n}"
+              ]
+            },
+            "isCompleted" : false
+          },
+          {
+            "title" : "Binding",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/binding",
+            "contentCode" : "struct PlayButton: View {\n    @Binding var isPlaying: Bool\n\n\n    var body: some View {\n        Button(isPlaying ? \"Pause\" : \"Play\") {\n            isPlaying.toggle()\n        }\n    }\n}\n\nstruct PlayerView: View {\n    @State var isPlaying: Bool = false\n\n\n    var body: some View {\n        VStack {\n            Text(\"New episode\")\n                .foregroundStyle(isPlaying ? .primary : .secondary)\n            PlayButton(isPlaying: $isPlaying)\n        }\n    }\n}",
+            "contentDescription" : "A property wrapper type that can read and write a value owned by a source of truth.\n\nUse a binding to create a two-way connection between a property that stores data, and a view that displays and changes the data. A binding connects a property to a source of truth stored elsewhere, instead of storing data directly. For example, a button that toggles between play and pause can create a binding to a property of its parent view using the `Binding` property wrapper.\n\nThe parent view declares a property to hold the playing state, using the `State` property wrapper to indicate that this property is the value’s source of truth:",
+            "codeExercise" : {
+              "id" : 40,
+              "startingCode" : "struct ToggleButton: View {\n    @Binding private var isStarted: Bool\n\n    var body: some View {\n        ...\n    }\n}\n\nstruct ControlView: View {\n    @State private var isStarted: Bool = false\n\n    var body: some View {\n        ...\n    }\n}",
+              "description" : "1) Create a `ToggleButton` struct in SwiftUI that toggles between \"Start\" and \"Stop\" using a binding variable.\n2) Then, create a `ControlView` struct that uses `ToggleButton` and binds its `isStarted` state.",
+              "title" : "Bind a Toggle Button",
+              "solutionCode" : [
+                "struct ToggleButton: View {\n    @Binding private var isStarted: Bool\n\n    var body: some View {\n        Button(isStarted ? \"Stop\" : \"Start\") {\n            isStarted.toggle()\n        }\n    }\n}\n\nstruct ControlView: View {\n    @State private var isStarted: Bool = false\n\n    var body: some View {\n        VStack {\n            ToggleButton(isStarted: $isStarted)\n        }\n    }\n}"
+              ]
+            },
+            "isCompleted" : false,
+            "id" : 95
+          }
+        ],
+        "id" : 1,
+        "title" : "State and Binding",
+        "completedSubsections" : 0
+      },
+      {
+        "id" : 2,
+        "completedSubsections" : 0,
+        "title" : "Objects",
+        "subsections" : [
+          {
+            "isCompleted" : false,
+            "id" : 96,
+            "contentCode" : "class DataModel: ObservableObject {\n    @Published var name = \"Some Name\"\n    @Published var isEnabled = false\n}\n\nstruct MySubView: View {\n    var body: some View {\n        Text(\"Subview\")\n    }\n}\n\n\nstruct MyView: View {\n    @StateObject private var model = DataModel() \/\/ Create the state object.\n\n\n    var body: some View {\n        Text(model.name) \/\/ Updates when the data model changes.\n        MySubView()\n            .environmentObject(model)\n    }\n}",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/stateobject",
+            "title" : "StateObject",
+            "contentDescription" : "A property wrapper type that instantiates an observable object.\n\nUse a state object as the single source of truth for a reference type that you store in a view hierarchy. Create a state object in a `View` by applying the `@StateObject` attribute to a property declaration and providing an initial value that conforms to the `ObservableObject` protocol. Declare state objects as private to prevent setting them from a memberwise initializer, which can conflict with the storage management that SwiftUI provides.\n\nIn this examole `DataModel` class conforms to the `ObservableObject` protocol and has two published properties: `name`, a string initialized to \"Some Name,\" and `isEnabled`, a boolean initialized to `false`. These properties can be observed for changes in SwiftUI views."
+          },
+          {
+            "id" : 97,
+            "isCompleted" : false,
+            "contentDescription" : "A property wrapper type that subscribes to an observable object and invalidates a view whenever the observable object changes.\n\nAdd the `@ObservedObject` attribute to a parameter of a SwiftUI `View` when the input is an `ObservableObject` and you want the view to update when the object’s published properties change. You typically do this to pass a `StateObject` into a subview.\nThe following example defines a data model as an observable object, instantiates the model in a view as a state object, and then passes the instance to a subview as an observed object:",
+            "contentCode" : "class DataModel: ObservableObject {\n    @Published var name = \"Some Name\"\n    @Published var isEnabled = false\n}\n\n\nstruct MyView: View {\n    @StateObject private var model = DataModel()\n\n\n    var body: some View {\n        Text(model.name)\n        MySubView(model: model)\n    }\n}\n\n\nstruct MySubView: View {\n    @ObservedObject var model: DataModel\n\n\n    var body: some View {\n        Toggle(model.isEnabled ? \"Enabled\" : \"Disabled\", isOn: $model.isEnabled)\n    }\n}",
+            "title" : "ObservedObject",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/observedobject"
+          },
+          {
+            "id" : 98,
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/environmentobject",
+            "title" : "EnvironmentObject",
+            "contentDescription" : "A property wrapper type for an observable object that a parent or ancestor view supplies.\n\nAn environment object invalidates the current view whenever the observable object that conforms to ObservableObject changes. If you declare a property as an environment object, be sure to set a corresponding model object on an ancestor view by calling its `environmentObject(_:)` modifier.\n\nHere's an example:",
+            "contentCode" : "class DataModel: ObservableObject {\n    @Published var name = \"Some Name\"\n    @Published var isEnabled = false\n}\n\n\nstruct MyView: View {\n    @StateObject private var model = DataModel()\n\n\n    var body: some View {\n        Text(model.name)\n        MySubView()\n            .environmentObject(model)\n    }\n}\n\n\nstruct MySubView: View {\n    @EnvironmentObject var model: DataModel\n\n\n    var body: some View {\n        Toggle(model.isEnabled ? \"Enabled\" : \"Disabled\", isOn: $model.isEnabled)\n    }\n}",
+            "isCompleted" : false
+          }
+        ]
+      }
+    ],
+    "id" : 12,
+    "time" : 70,
+    "progress" : 0,
+    "difficulty" : "Beginner",
+    "completedSections" : 0
+  },
+  {
+    "difficulty" : "Beginner",
+    "title" : "Components in SwiftUI",
+    "sections" : [
+      {
+        "completedSubsections" : 0,
+        "id" : 1,
+        "title" : "Interactive Components",
+        "subsections" : [
+          {
+            "isCompleted" : false,
+            "contentDescription" : "You create a button by providing an action and a label. The action is either a method or closure property that does something when a user clicks or taps the button. The label is a view that describes the button’s action — for example, by showing text, an icon, or both.\n\nThe label of a button can be any kind of view, such as a `Text` view for text-only labels or a `Label` view, for buttons with both a title and an icon:",
+            "contentCode" : "struct ButtonView: View {\n   var body: some View {\n       Button(action: signIn) {\n           Text(\"Sign In\") \/\/ Only Title\n\n           \/\/ Label(\"Sign In\", systemImage: \"arrow.up\")\n           \/\/ Title and an incon\n       }\n   }\n   \n   func signIn() {\n       \/\/ do something\n   }\n}",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/button",
+            "id" : 99,
+            "title" : "Button Part I",
+            "codeExercise" : {
+              "description" : "1) Create a `SubmitButtonView` struct in SwiftUI that displays a button with the title \"Submit\".\n2) The button should call a function `submit` when tapped.",
+              "solutionCode" : [
+                "struct SubmitButtonView: View {\n    var body: some View {\n        Button(action: submit) {\n            Text(\"Submit\")\n        }\n    }\n\n    func submit() {\n        \/\/ perform submit action\n    }\n}"
+              ],
+              "title" : "Create a Submit Button",
+              "id" : 41,
+              "startingCode" : "struct SubmitButtonView: View {\n    var body: some View {\n        ...\n    }\n\n    func submit() {\n        \/\/ perform submit action\n    }\n}"
+            }
+          },
+          {
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/button#Assigning-a-role",
+            "title" : "Button Part II",
+            "codeExercise" : {
+              "id" : 42,
+              "description" : "1) Create a `UpdateButtonView` struct in SwiftUI that displays a button with the title \"Update\" and a prominent role.\n2) The button should call a function `update` when tapped.",
+              "solutionCode" : [
+                "struct UpdateButtonView: View {\n    var body: some View {\n        Button(\"Update\", role: .prominent, action: update)\n    }\n\n    func update() {\n        \/\/ perform update action\n    }\n}"
+              ],
+              "startingCode" : "struct UpdateButtonView: View {\n    var body: some View {\n        ...\n    }\n\n    func update() {\n        \/\/ perform update action\n    }\n}",
+              "title" : "Create an Update Button"
+            },
+            "isCompleted" : false,
+            "contentCode" : "struct ButtonView: View {\n   var body: some View {\n       Button(\"Delete\", role: .destructive, action: delete)\n   }\n\n   func delete() {\n   \/\/ do something\n   }\n}",
+            "contentDescription" : "You can optionally initialize a button with a `ButtonRole` that characterizes the button’s purpose. For example, you can create a `destructive` button for a deletion action:",
+            "id" : 100
+          },
+          {
+            "contentCode" : "struct ButtonView: View {\n   var body: some View {\n       Button(\"Sign In\", action: signIn)\n           .buttonStyle(.bordered)\n   }\n\n   func signIn() {\n       \/\/ do something\n   }\n}",
+            "isCompleted" : false,
+            "id" : 101,
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/button#Styling-buttons",
+            "title" : "Button Part III",
+            "contentDescription" : "You can customize a button’s appearance using one of the standard button styles, like `bordered`, and apply the style with the `buttonStyle(_:)` modifier:"
+          },
+          {
+            "codeExercise" : {
+              "title" : "Create an Email TextField",
+              "startingCode" : "struct EmailTextFieldView: View {\n    @State private var email: String = \"\"\n\n    var body: some View {\n        VStack {\n            ...\n        }\n    }\n}",
+              "solutionCode" : [
+                "struct EmailTextFieldView: View {\n    @State private var email: String = \"\"\n\n    var body: some View {\n        VStack {\n            TextField(\"Email address\", text: $email)\n                .textInputAutocapitalization(.never)\n                .disableAutocorrection(true)\n                .border(.secondary)\n            Text(email)\n                .foregroundColor(.red)\n        }\n    }\n}"
+              ],
+              "id" : 43,
+              "description" : "1) Create a `EmailTextFieldView` struct in SwiftUI that displays a text field with the placeholder \"Email address\" for entering an email.\n2) The text field should have a border of a secondary color, disable autocorrection, and use no text input autocapitalization.\n3) Below the text field, display the entered email in red text."
+            },
+            "title" : "TextField",
+            "id" : 102,
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/textfield",
+            "contentCode" : "struct TextFieldView: View {\n   @State private var username: String = \"\"\n\n   var body: some View {\n       TextField(\n           \"User name (email address)\",\n           text: $username\n       )\n       .onSubmit {\n           \/\/ validate(name: username)\n       }\n       .textInputAutocapitalization(.never)\n       .disableAutocorrection(true)\n       .border(.secondary)\n\n\n       Text(username)\n           .foregroundColor(.blue)\n   }\n}",
+            "contentDescription" : "You create a text field with a label and a binding to a value. If the value is a string, the text field updates this value continuously as the user types or otherwise edits the text in the field. For non-string types, it updates the value when the user commits their edits, such as by pressing the Return key.\n\nThe following example shows a text field to accept a username, and a `Text` view below it that shadows the continuously updated value of username. The `Text` view changes color as the user begins and ends editing. When the user submits their completed entry to the text field, the `onSubmit(of:_:)` modifer calls an internal `validate(name:)` method.",
+            "isCompleted" : false
+          },
+          {
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/slider",
+            "isCompleted" : false,
+            "id" : 103,
+            "title" : "Slider",
+            "codeExercise" : {
+              "solutionCode" : [
+                "struct VolumeSliderView: View {\n    @State private var volume = 50.0\n    @State private var isEditing = false\n\n    var body: some View {\n        VStack {\n            Slider(\n                value: $volume,\n                in: 0...100,\n                onEditingChanged: { editing in\n                    isEditing = editing\n                }\n            )\n            Text(\"\\(volume)\")\n                .foregroundColor(isEditing ? .green : .gray)\n        }\n    }\n}"
+              ],
+              "id" : 44,
+              "description" : "1) Create a `VolumeSliderView` struct in SwiftUI that displays a slider for selecting a volume value between 0 and 100.\n2) Below the slider, display the selected volume value in green text while editing and gray text otherwise.",
+              "title" : "Create a Volume Slider",
+              "startingCode" : "struct VolumeSliderView: View {\n    @State private var volume = 50.0\n    @State private var isEditing = false\n\n    var body: some View {\n        VStack {\n            ...\n        }\n    }\n}"
+            },
+            "contentDescription" : "A control for selecting a value from a bounded linear range of values.\n\nA slider consists of a “thumb” image that the user moves between two extremes of a linear “track”. The ends of the track represent the minimum and maximum possible values. As the user moves the thumb, the slider updates its bound value.\n\nThe following example shows a slider bound to the value speed. As the slider updates this value, a bound `Text` view shows the value updating. The `onEditingChanged` closure passed to the slider receives callbacks when the user drags the slider. The example uses this to change the color of the value text.",
+            "contentCode" : "struct SliderView: View {\n   @State private var speed = 50.0\n   @State private var isEditing = false\n\n\n   var body: some View {\n       VStack {\n           Slider(\n               value: $speed,\n               in: 0...100,\n               onEditingChanged: { editing in\n                   isEditing = editing\n               }\n           )\n           Text(\"\\(speed)\")\n               .foregroundColor(isEditing ? .red : .blue)\n       }\n   }\n}"
+          },
+          {
+            "id" : 104,
+            "title" : "Toggle",
+            "contentCode" : "struct ToggleView: View {\n   @State private var vibrateOnRing = false\n\n   var body: some View {\n       Toggle(isOn: $vibrateOnRing) {\n           Text(\"Vibrate on Ring\")\n       }\n   }\n}",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/toggle",
+            "contentDescription" : "A control for selecting a value from a bounded linear range of values.\n\nYou create a toggle by providing an `isOn` binding and a label. Bind `isOn` to a Boolean property that determines whether the toggle is on or off. Set the label to a view that visually describes the purpose of switching between toggle states. For example:",
+            "isCompleted" : false
+          },
+          {
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/uikit\/uiimage\/configuring_and_displaying_symbol_images_in_your_ui",
+            "title" : "System Images",
+            "contentCode" : "struct SystemImagesView: View {\n   var body: some View {\n       \/\/ Create a system symbol image.\n       Image(systemName: \"multiply.circle.fill\")\n   }\n}",
+            "contentDescription" : "Symbol images give you a consistent set of icons to use in your app, and ensure that those icons adapt to different sizes and to app-specific content. A symbol image contains a vector-based shape that scales without losing its sharpness. You generate its final appearance by applying a tint color, or if you’re using SF Symbols 2 or later, you can apply multiple colors to add depth and emphasis to your symbol. You use symbol images in places where you display a simple shape or glyph, such as a bar button item.\n\nIn SwiftUI, you use `Image(systemName:)` to load a system symbol image and `Image(_:)` to load your custom symbol, as the following code shows:",
+            "id" : 105,
+            "isCompleted" : false
+          }
+        ]
+      }
+    ],
+    "progress" : 0,
+    "moduleType" : "SwiftUI",
+    "id" : 13,
+    "completedSections" : 0,
+    "time" : 60
+  },
+  {
+    "moduleType" : "SwiftUI",
+    "completedSections" : 0,
+    "id" : 13,
+    "title" : "Navigations and Views",
+    "time" : 80,
+    "difficulty" : "Intermediate",
+    "sections" : [
+      {
+        "subsections" : [
+          {
+            "id" : 106,
+            "contentDescription" : "A view that displays a root view and enables you to present additional views over the root view.\n\nUse a navigation stack to present a stack of views over a root view. People can add views to the top of the stack by clicking or tapping a `NavigationLink`, and remove views using built-in, platform-appropriate controls, like a Back button or a swipe gesture. The stack always displays the most recently added view that hasn’t been removed, and doesn’t allow the root view to be removed.\n\nTo create navigation links, associate a view with a data type by adding a `navigationDestination(for:destination:)` modifier inside the stack’s view hierarchy. Then initialize a NavigationLink that presents an instance of the same kind of data.\n\nThis example defines a view with a list of names displayed using a `NavigationStack`. Each name in the list is a navigation link that, when tapped, navigates to a new view displaying the selected name as text.",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/navigationstack",
+            "title" : "Navigations",
+            "codeExercise" : {
+              "id" : 45,
+              "description" : "1) Create a `FoodNavigationView` struct in SwiftUI that displays a list of food items using a `NavigationStack`.\n2) Each food item should be a navigation link that navigates to a new view displaying the selected food name.",
+              "title" : "Create a Food Navigation Stack",
+              "solutionCode" : [
+                "struct FoodNavigationView: View {\n    var foodItems: [String] = [\"Apple\", \"Banana\", \"Carrot\", \"Date\", \"Eggplant\"]\n\n    var body: some View {\n        NavigationStack {\n           \n\n List(foodItems, id: \\.self) { food in\n                NavigationLink(food, value: food)\n            }\n            .navigationDestination(for: String.self) { food in\n                Text(food)\n            }\n        }\n    }\n}"
+              ],
+              "startingCode" : "struct FoodNavigationView: View {\n    var foodItems: [String] = [\"Apple\", \"Banana\", \"Carrot\", \"Date\", \"Eggplant\"]\n\n    var body: some View {\n        NavigationStack {\n            ...\n        }\n    }\n}"
+            },
+            "contentCode" : "struct NavigationExampleView: View {\n    var names: [String] = [\"Paul\", \"Abraham\", \"Leon\", \"Elias\", \"Eren\", \"Canel\"]\n\n    var body: some View {\n        NavigationStack {\n            List(names, id: \\.self) { name in\n                NavigationLink(name, value: name)\n            }\n            .navigationDestination(for: String.self) { name in\n                Text(name)\n            }\n        }\n    }\n}",
+            "isCompleted" : false
+          },
+          {
+            "contentDescription" : "To create a user interface with tabs, place views in a TabView and apply the `tabItem(_:)` modifier to the contents of each tab. On iOS, you can also use one of the badge modifiers, like `badge(_:)`, to assign a badge to each of the tabs.\n\nThis example defines a view with `TabView` containing two tabs. The first tab displays \"First Tab\" with a badge of \"2\" and an icon of a circle with the number 1. The second tab displays \"Second Tab\" with a badge of \"!\" and an icon of a circle with the number 2:",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/tabview",
+            "contentCode" : "struct TabViewExample: View {\n    var body: some View {\n        TabView {\n            Text(\"First Tab\")\n                .badge(\"2\")\n                .tabItem {\n                    Image(systemName: \"1.circle\")\n                    Text(\"First\")\n                }\n            Text(\"Second Tab\")\n                .badge(\"!\")\n                .tabItem {\n                    Image(systemName: \"2.circle\")\n                    Text(\"Second\")\n                }\n        }\n    }\n}",
+            "id" : 107,
+            "isCompleted" : false,
+            "codeExercise" : {
+              "startingCode" : "struct CategoryTabView: View {\n    var body: some View {\n        TabView {\n            ...\n        }\n    }\n}",
+              "title" : "Create a Category Tab View",
+              "solutionCode" : [
+                "struct CategoryTabView: View {\n    var body: some View {\n        TabView {\n            Text(\"Fruits\")\n                .badge(\"5\")\n                .tabItem {\n                    Image(systemName: \"applelogo\")\n                    Text(\"Fruits\")\n                }\n            Text(\"Vegetables\")\n                .badge(\"3\")\n                .tabItem {\n                    Image(systemName: \"leaf\")\n                    Text(\"Vegetables\")\n                }\n        }\n    }\n}"
+              ],
+              "id" : 46,
+              "description" : "1) Create a `CategoryTabView` struct in SwiftUI that displays a `TabView` with two tabs.\n2) The first tab should display \"Fruits\" with a badge of \"5\" and an icon of an apple. \n3) The second tab should display \"Vegetables\" with a badge of \"3\" and an icon of a carrot."
+            },
+            "title" : "TabView"
+          }
+        ],
+        "id" : 1,
+        "completedSubsections" : 0,
+        "title" : "NavigationStacks and Links"
+      }
+    ],
+    "progress" : 0
+  },
+  {
+    "sections" : [
+      {
+        "subsections" : [
+          {
+            "contentDescription" : "Rotates a view’s rendered output in two dimensions around the specified point.\n\nThis example defines a view that includes a state variable `isRotated` initialized to `false` to control the rotation of an arrow image. The view contains an `Image` that rotates 90 degrees when `isRotated` is `true`, with an ease-in-out animation of 1 second. Tapping the image toggles the rotation state:",
+            "id" : 108,
+            "title" : "Rotation Effects",
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/view\/rotationeffect(_:anchor:)",
+            "isCompleted" : false,
+            "contentCode" : "struct BasicAnimationView: View {\n    @State private var isRotated = false\n    \n    var body: some View {\n        Image(systemName: \"arrow.right.circle.fill\")\n            .rotationEffect(.degrees(isRotated ? 90 : 0))\n            .animation(.easeInOut, value: 1)\n            .onTapGesture {\n                isRotated.toggle()\n            }\n    }\n}",
+            "codeExercise" : {
+              "description" : "Create a `RotatingArrowView` struct in SwiftUI that displays an arrow image which rotates 180 degrees when tapped, with an ease-out animation of 2 seconds.",
+              "startingCode" : "struct RotatingArrowView: View {\n    @State private var isRotated = false\n\n    var body: some View {\n        ...\n    }\n}",
+              "solutionCode" : [
+                "struct RotatingArrowView: View {\n    @State private var isRotated = false\n\n    var body: some View {\n        Image(systemName: \"arrow.right.circle.fill\")\n            .rotationEffect(.degrees(isRotated ? 180 : 0))\n            .animation(.easeOut(duration: 2), value: isRotated)\n            .onTapGesture {\n                isRotated.toggle()\n            }\n    }\n}"
+              ],
+              "title" : "Create a Rotating Arrow",
+              "id" : 47
+            }
+          },
+          {
+            "id" : 109,
+            "contentCode" : "struct AnimationView: View {\n    @State private var scale: CGFloat = 1.0\n\n    var body: some View {\n        VStack {\n            Image(systemName: \"star.fill\")\n                .scaleEffect(scale)\n                .animation(.easeInOut, value: 1)\n            Button(\"Animate\") {\n                scale += 0.5\n            }\n        }\n    }\n}",
+            "title" : "Scale Effects",
+            "contentDescription" : "Scales this view’s rendered output by the given vertical and horizontal size amounts, relative to an anchor point.\n\nThis example defines a view that includes a state variable `scale` initialized to 1.0 to control the scaling of a star image. The view contains a vertically stacked `Image` with a scaling effect and animation, and a button that increases the scale by 0.5 when tapped, triggering the animation.",
+            "codeExercise" : {
+              "description" : "Create a `PulsingHeartView` struct in SwiftUI that displays a heart image which scales up by 0.2 when a button is tapped, with an ease-in animation of 0.5 seconds.",
+              "title" : "Create a Pulsing Heart",
+              "id" : 48,
+              "startingCode" : "struct PulsingHeartView: View {\n    @State private var scale: CGFloat = 1.0\n\n    var body: some View {\n        VStack {\n            ...\n        }\n    }\n}",
+              "solutionCode" : [
+                "struct PulsingHeartView: View {\n    @State private var scale: CGFloat = 1.0\n\n    var body: some View {\n        VStack {\n            Image(systemName: \"heart.fill\")\n                .scaleEffect(scale)\n                .animation(.easeIn(duration: 0.5), value: scale)\n            Button(\"Pulse\") {\n                scale += 0.2\n            }\n        }\n    }\n}"
+              ]
+            },
+            "linkDocumentation" : "https:\/\/developer.apple.com\/documentation\/swiftui\/view\/scaleeffect(_:anchor:)-7q7as",
+            "isCompleted" : false
+          }
+        ],
+        "id" : 1,
+        "title" : "Animations",
+        "completedSubsections" : 0
+      }
+    ],
+    "id" : 13,
+    "progress" : 0,
+    "title" : "Advanced SwiftUI-Lectures",
+    "difficulty" : "Advanced",
+    "time" : 60,
+    "moduleType" : "SwiftUI",
+    "completedSections" : 0
+  }
+]

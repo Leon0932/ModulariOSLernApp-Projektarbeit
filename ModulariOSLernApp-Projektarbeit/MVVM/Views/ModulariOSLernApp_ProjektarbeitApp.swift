@@ -7,14 +7,18 @@
 
 import SwiftUI
 
+
 @main
 struct ModulariOSLernApp_ProjektarbeitApp: App {
-    let persistenceController = PersistenceController.shared
+    @StateObject private var profileViewModel = ProfileViewModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(profileViewModel)
         }
     }
 }
+
+
+
