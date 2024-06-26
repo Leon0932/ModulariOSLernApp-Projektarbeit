@@ -55,7 +55,11 @@ If you encounter any issues or have questions, please open an issue on GitHub or
 
 ## Video Demonstration
 
-Watch the demo demonstration of the app:
+Watch the video demonstration of the app:
 
+### iPhone
 [![Watch the video](https://img.youtube.com/vi/lWs0hCHoTvY/maxresdefault.jpg)](https://youtu.be/lWs0hCHoTvY?si=vaZl7TTzXuD8O7jD)
+
+### iPad
+[![Watch the video](https://img.youtube.com/vi/hDzElD-VWtY/maxresdefault.jpg)](https://youtu.be/hDzElD-VWtY)
 
