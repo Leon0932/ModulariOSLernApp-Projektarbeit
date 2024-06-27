@@ -103,7 +103,7 @@ private extension CodeEditorView {
                 
                 
                 ActionButton(text: isEditable ? "Done" : "Edit",
-                             systemImage: isEditable ? "" : "pencil",
+                             systemImage: "pencil",
                              action: toggleEdit)
             }
             
