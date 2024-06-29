@@ -8,6 +8,7 @@
 import SwiftUI
 import SafariServices
 
+// Source: https://sarunw.com/posts/sfsafariviewcontroller-in-swiftui
 /// A view that wraps the `SFSafariViewController` to display a web page within a SwiftUI view.
 struct SafariWebView: UIViewControllerRepresentable {
     let url: URL // The URL to be loaded in the Safari view controller.

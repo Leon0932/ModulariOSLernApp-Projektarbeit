@@ -34,6 +34,7 @@ struct SolutionsExerciseView: View {
         VStack(alignment: .leading, spacing: 16) {
             CustomCodeText(codeText: .constant(solution), status: .constant(.success), language: .swift)
                 .onTapGesture(count: 2) {
+                    // Source: https://xavier7t.com/copy-to-clipboard-in-swiftui
                     let pasteboard = UIPasteboard.general
                     pasteboard.string = solution
                     withAnimation {
