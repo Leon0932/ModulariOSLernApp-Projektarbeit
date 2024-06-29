@@ -6,7 +6,7 @@ This project is a modular iOS learning application developed with Swift and Xcod
 
 ## Prerequisites
 
-- Xcode (version 12 or higher)
+- Xcode (version 15 or higher)
 - Git
 - GitHub account (optional but recommended)
 
@@ -29,7 +29,7 @@ cd ModulariOSLernApp-Projektarbeit
 ### 3. Open the Xcode project
 
 ```bash
-open ModulariOSLernApp-Projektarbeit.xcworkspace
+open ModulariOSLernApp-Projektarbeit.xcodeproj/project.xcworkspace/
 ```
 
 ### 4. Install packages
@@ -39,15 +39,35 @@ Xcode should automatically recognize and install the necessary Swift packages. I
 1. Open Xcode.
 2. Go to `File` > `Packages` > `Update to Latest Package Versions`.
 
-### 5. Build and run the project
+### 5. Signing & Capabilities
+
+After opening the project in Xcode:
+
+1. Go to `Signing & Capabilities`.
+2. Sign in with your Apple Developer Account.
+3. Adjust the `Bundle Identifier` if necessary (e.g., `com.yourname.ModulariOSLernApp-Projektarbeit`).
+
+### 6. Build and run the project
 
 Select your target device and click the Run button (`⌘R`) to build and run the project.
+
+## Running Unit Tests
+
+To execute the Unit Tests, follow these steps:
+
+1. Open the project in Xcode.
+2. Press `Command + U` to run all Unit Tests.
+3. Review the results in the Test navigator.
+
+### Note
+
+In the UserDefaultsManagerTests file located under the ModulariOSLernApp-ProjektarbeitTests folder, make sure to change the organization identifier in line 14, only if the organization has been changed.
 
 ## Troubleshooting
 
 ### Dependencies are not resolved correctly
 
-Ensure the `Package.resolved` file is present in the `ModulariOSLernApp-Projektarbeit.xcworkspace/xcshareddata` directory.
+Ensure the `Package.resolved` file is present in the `ModulariOSLernApp-Projektarbeit/ModulariOSLernApp-Projektarbeit.xcodeproj/project.xcworkspace/xcshareddata/swiftpm` directory.
 
 ### Further assistance
 
@@ -62,4 +82,3 @@ Watch the video demonstration of the app:
 
 ### iPad
 [![Watch the video](https://img.youtube.com/vi/hDzElD-VWtY/maxresdefault.jpg)](https://youtu.be/hDzElD-VWtY)
-
