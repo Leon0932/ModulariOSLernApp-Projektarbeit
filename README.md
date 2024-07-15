@@ -6,7 +6,7 @@ This project is a modular iOS learning application developed with Swift and Xcod
 
 ## Prerequisites
 
-- Xcode (version 15 or higher)
+- Xcode (version 15.4 or higher)
 - Git
 - GitHub account (optional but recommended)
 
